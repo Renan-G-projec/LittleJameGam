@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/ant.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://mv12ccc5rndw" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://wyx4a3c056aa" path="res://components/feel_component.gd" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
 
@@ -9,7 +10,7 @@
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d1p6d"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_buoi2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -26,5 +27,15 @@ script = ExtResource("1_g2els")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874781418]
 shape = SubResource("RectangleShape2D_d1p6d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1213122235]
-sprite_frames = SubResource("SpriteFrames_d1p6d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1444273380]
+sprite_frames = SubResource("SpriteFrames_buoi2")
+
+[node name="FeelComponent" type="Node" parent="." unique_id=1696260066]
+script = ExtResource("3_qhqgy")
+metadata/_custom_type_script = "uid://wyx4a3c056aa"
+
+[node name="JumpInputBufferTimer" type="Timer" parent="." unique_id=1531183627]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="JumpInputBufferTimer" to="." method="_on_jump_input_buffer_timer_timeout"]
