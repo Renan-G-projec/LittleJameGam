@@ -11,6 +11,8 @@ const DASH_VELOCITY = 800.0
 @onready var _feel_component: FeelComponent = $FeelComponent
 @onready var _jump_input_buffer_timer: Timer = $JumpInputBufferTimer
 
+var animation_time: float = 0.0
+
 var _jump_input_buffer: bool = false
 var _can_dash: bool = false
 
@@ -20,6 +22,13 @@ func _physics_process(delta: float) -> void:
 	_update_velocity(delta)
 
 	move_and_slide()
+	
+	if velocity.length() > 0.99:
+		animation_time += delta * 10.0
+		rotation = sin(animation_time) * 0.2
+	else:
+		rotation = lerp_angle(rotation, 0.0, 0.1)
+		animation_time = 0.0
 
 func _update_velocity(delta: float) -> void:
 	if !is_on_floor():
