@@ -3,6 +3,86 @@
 [ext_resource type="Script" uid="uid://bfn4o32h0lh8a" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/background.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="4_tefeu"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tipki"]
+action = &"directional_left"
+
+[sub_resource type="InputEventAction" id="InputEventAction_o6xl0"]
+action = &"directional_up"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(0, 20, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(18, 20, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya4ey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_choun")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tefeu"]
+action = &"directional_down"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(0, 40, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(18, 40, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tbgi4"]
+action = &"directional_right"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(0, 60, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(18, 60, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85g3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1p6d"]
 distance = -154.0
@@ -17,10 +97,37 @@ script = ExtResource("1_o5qli")
 texture = ExtResource("2_0wfyh")
 centered = false
 
+[node name="ArcadeButtonLeft" parent="." unique_id=34883181 instance=ExtResource("3_tbgi4")]
+position = Vector2(71, 151)
+directional_action = SubResource("InputEventAction_tipki")
+
+[node name="ArcadeButtonUp" parent="." unique_id=1469390153 instance=ExtResource("3_tbgi4")]
+position = Vector2(94, 151)
+directional_action = SubResource("InputEventAction_o6xl0")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonUp" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_ya4ey")
+
+[node name="ArcadeButtonDown" parent="." unique_id=1354454935 instance=ExtResource("3_tbgi4")]
+position = Vector2(118, 151)
+directional_action = SubResource("InputEventAction_tefeu")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonDown" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_o6xl0")
+
+[node name="ArcadeButtonRight" parent="." unique_id=1237762229 instance=ExtResource("3_tbgi4")]
+position = Vector2(143, 151)
+directional_action = SubResource("InputEventAction_tbgi4")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonRight" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_85g3d")
+
 [node name="MapCollisions" type="StaticBody2D" parent="." unique_id=2028716468]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapCollisions" unique_id=879869806]
-position = Vector2(160, 0)
+position = Vector2(164, 2)
 shape = SubResource("WorldBoundaryShape2D_d1p6d")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapCollisions" unique_id=909664667]
@@ -32,4 +139,9 @@ position = Vector2(301.75, 90)
 shape = SubResource("RectangleShape2D_d1p6d")
 
 [node name="Player" parent="." unique_id=915638823 instance=ExtResource("3_sugp2")]
-position = Vector2(76, 136)
+position = Vector2(98, 124)
+
+[editable path="ArcadeButtonLeft"]
+[editable path="ArcadeButtonUp"]
+[editable path="ArcadeButtonDown"]
+[editable path="ArcadeButtonRight"]

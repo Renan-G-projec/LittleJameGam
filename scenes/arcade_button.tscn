@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cxhpwp060almc"]
+
+[ext_resource type="Script" uid="uid://bgd3a6bg3kdvh" path="res://scripts/arcade_button.gd" id="1_qlcnn"]
+[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="2_8xy88"]
+[ext_resource type="Script" uid="uid://wyx4a3c056aa" path="res://components/feel_component.gd" id="3_wgp3x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgp3x"]
+atlas = ExtResource("2_8xy88")
+region = Rect2(0, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54lvw"]
+atlas = ExtResource("2_8xy88")
+region = Rect2(18, 0, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1p6d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgp3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54lvw")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
+size = Vector2(12, 10.5)
+
+[node name="ArcadeButton" type="Node2D" unique_id=34883181]
+script = ExtResource("1_qlcnn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_d1p6d")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2072963921]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1768119659]
+position = Vector2(0, 3.75)
+shape = SubResource("RectangleShape2D_d1p6d")
+
+[node name="FeelComponent" type="Node" parent="." unique_id=1289268970]
+script = ExtResource("3_wgp3x")
+metadata/_custom_type_script = "uid://wyx4a3c056aa"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
