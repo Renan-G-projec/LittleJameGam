@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const startSpeed = 20
-const accel = 2
+const startSpeed = 40
+const accel = 5
 var speed : int
 var dir : Vector2
 
@@ -21,4 +21,12 @@ func random_direction():
 	return newDirection.normalized()
 
 func _physics_process(delta: float) -> void:
-	move_and_collide(dir * speed * delta)
+	var collision = move_and_collide(dir * speed * delta)
+	var collider
+	if collision:
+		collider = collision.get_collider()
+		if collider == $"../Paddle" or collider == $"../CPU":
+			speed += accel
+			dir = dir.bounce(collision.get_normal())
+		else:
+			dir = dir.bounce(collision.get_normal())

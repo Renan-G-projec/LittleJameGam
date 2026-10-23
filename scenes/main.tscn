@@ -203,7 +203,7 @@ position = Vector2(301.75, 90)
 shape = SubResource("RectangleShape2D_d1p6d")
 
 [node name="Player" parent="." unique_id=915638823 instance=ExtResource("3_sugp2")]
-position = Vector2(98, 124)
+position = Vector2(179, 121)
 
 [node name="Screen" parent="." unique_id=187329371 instance=ExtResource("7_o6xl0")]
 anchors_preset = 8
@@ -250,7 +250,7 @@ position = Vector2(3, 13)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("10_choun")
-speed = 50
+speed = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/Paddle" unique_id=474378498]
 shape = SubResource("RectangleShape2D_57qmd")
