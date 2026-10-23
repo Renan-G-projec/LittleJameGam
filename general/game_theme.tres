@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://l6op4bwjbla"]
+
+[ext_resource type="FontFile" uid="uid://232h6yemmd27" path="res://fonts/augiepixel.ttf" id="1_13kdv"]
+
+[resource]
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/bold_font = ExtResource("1_13kdv")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_13kdv")
+RichTextLabel/fonts/italics_font = ExtResource("1_13kdv")
+RichTextLabel/fonts/mono_font = ExtResource("1_13kdv")
+RichTextLabel/fonts/normal_font = ExtResource("1_13kdv")

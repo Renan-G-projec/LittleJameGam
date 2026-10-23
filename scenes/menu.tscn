@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cv4pi82xsqqji"]
 
 [ext_resource type="Script" uid="uid://e148cd4dwwmi" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://dfqi2ln1p53xt" path="res://sprites/menu.png" id="2_vjb58"]
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="3_con2f"]
 
 [node name="Menu" type="Control" unique_id=2114092794]
 layout_mode = 3
@@ -12,22 +14,52 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_yqeox")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1296750379]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=66735998]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_vjb58")
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1694693568]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=556660818]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -45.0
+offset_right = 144.0
+offset_bottom = 45.0
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1644034665]
 layout_mode = 2
-text = "Play"
+alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="PlayLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=673581649]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_con2f")
+bbcode_enabled = true
+text = "Play"
+fit_content = true
+scroll_active = false
+
+[node name="SettingsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=799099986]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_con2f")
+bbcode_enabled = true
+text = "Settings
+"
+fit_content = true
+
+[node name="ExitLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2133856512]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_con2f")
+bbcode_enabled = true
+text = "Exit"
+fit_content = true
