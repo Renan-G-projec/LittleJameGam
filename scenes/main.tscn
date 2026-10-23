@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main_button.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/ant.png" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://8yohacxvbbqq" path="res://scripts/arcade.gd" id="7_tipki"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -119,6 +121,11 @@ distance = -154.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
 size = Vector2(34.5, 180)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(226, 20)
+
 [node name="Main" type="Node2D" unique_id=1920575128]
 script = ExtResource("1_o5qli")
 
@@ -179,6 +186,22 @@ shape = SubResource("RectangleShape2D_d1p6d")
 
 [node name="Player" parent="." unique_id=915638823 instance=ExtResource("3_sugp2")]
 position = Vector2(98, 124)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=520108443]
+position = Vector2(148, 54)
+script = ExtResource("7_tipki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1011998384]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1195829917]
+texture = ExtResource("7_o6xl0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=537608773]
+position = Vector2(158, 93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2036173340]
+shape = SubResource("RectangleShape2D_yf5fn")
 
 [editable path="ArcadeButtonLeft"]
 [editable path="ArcadeButtonUp"]
