@@ -11,6 +11,8 @@ const DASH_VELOCITY = 800.0
 @onready var _feel_component: FeelComponent = $FeelComponent
 @onready var _jump_input_buffer_timer: Timer = $JumpInputBufferTimer
 
+@onready var sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var animation_time: float = 0.0
 
 var direction = null
@@ -62,6 +64,8 @@ func _jump() -> void:
 	_can_dash = true
 	velocity.y = JUMP_VELOCITY
 	_feel_component.squash_animation(_sprite, Vector2(0.5, 1.5), 0.4)
+	sfx.pitch_scale = randf_range(1, 1.2)
+	sfx.play()
 
 func _dash(force: float, direction: int) -> void:
 	if !_can_dash: return

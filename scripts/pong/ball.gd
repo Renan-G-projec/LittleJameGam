@@ -28,5 +28,7 @@ func _physics_process(delta: float) -> void:
 		if collider == $"../Paddle" or collider == $"../CPU":
 			speed += accel
 			dir = dir.bounce(collision.get_normal())
+			dir = dir + Vector2(0.0,randf_range(0,1))*sign(dir)
+			dir *= randf_range(1,1.05)
 		else:
 			dir = dir.bounce(collision.get_normal())

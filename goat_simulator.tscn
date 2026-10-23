@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dp2pfll6orlup"]
+
+[ext_resource type="Script" uid="uid://cilg1u0jc14ej" path="res://goat_simulator.gd" id="1_1hbpc"]
+[ext_resource type="Texture2D" uid="uid://4bqyvfi14ny1" path="res://sprites/goat.png" id="1_o8lrq"]
+[ext_resource type="Script" uid="uid://d04d6fs68lowc" path="res://scripts/goat_move.gd" id="2_2ayuf"]
+[ext_resource type="AudioStream" uid="uid://b7243p0aca383" path="res://sfx/goat.mp3" id="2_x2ujt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8lrq"]
+size = Vector2(20, 24)
+
+[node name="goat simulator" type="Node2D" unique_id=617005579]
+script = ExtResource("1_1hbpc")
+metadata/_edit_horizontal_guides_ = [100.0]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=620734267]
+script = ExtResource("2_2ayuf")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1392785318]
+position = Vector2(152, 100)
+texture = ExtResource("1_o8lrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1214571804]
+position = Vector2(153, 100)
+shape = SubResource("RectangleShape2D_o8lrq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1126648203]
+stream = ExtResource("2_x2ujt")
+parameters/looping = true

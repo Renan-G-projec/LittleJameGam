@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcmjycwx5h84b"
-path="res://.godot/imported/directional_buttons.png-1dff298f0536e97a11250f292a42d765.ctex"
+uid="uid://c1xl151g0eldf"
+path="res://.godot/imported/LittleJameGam.apple-touch-icon.png-2c3376eecb88256268326d28b7e310d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/directional_buttons.png"
-dest_files=["res://.godot/imported/directional_buttons.png-1dff298f0536e97a11250f292a42d765.ctex"]
+source_file="res://LittleJameGam.apple-touch-icon.png"
+dest_files=["res://.godot/imported/LittleJameGam.apple-touch-icon.png-2c3376eecb88256268326d28b7e310d7.ctex"]
 
 [params]
 

@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://232h6yemmd27" path="res://fonts/augiepixel.ttf" id="1_13kdv"]
 
 [resource]
+RichTextLabel/constants/shadow_outline_size = 4
 RichTextLabel/font_sizes/normal_font_size = 32
 RichTextLabel/fonts/bold_font = ExtResource("1_13kdv")
 RichTextLabel/fonts/bold_italics_font = ExtResource("1_13kdv")
