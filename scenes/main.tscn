@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/main/background.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://dnurlgparawqa" path="res://sfx/press.wav" id="4_muem4"]
 [ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/main/directional_buttons.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
@@ -157,12 +158,20 @@ centered = false
 position = Vector2(71, 151)
 directional_action = SubResource("InputEventAction_tipki")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ArcadeButtonLeft" unique_id=621856829]
+stream = ExtResource("4_muem4")
+attenuation = 0.29730248
+panning_strength = 0.73
+
 [node name="ArcadeButtonDown" parent="." unique_id=1354454935 instance=ExtResource("3_tbgi4")]
 position = Vector2(95, 151)
 directional_action = SubResource("InputEventAction_tefeu")
 
 [node name="AnimatedSprite2D" parent="ArcadeButtonDown" index="0" unique_id=1693972737]
 sprite_frames = SubResource("SpriteFrames_o6xl0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ArcadeButtonDown" unique_id=458364238]
+stream = ExtResource("4_muem4")
 
 [node name="ArcadeButtonUp" parent="." unique_id=1469390153 instance=ExtResource("3_tbgi4")]
 position = Vector2(118, 151)
@@ -171,12 +180,18 @@ directional_action = SubResource("InputEventAction_o6xl0")
 [node name="AnimatedSprite2D" parent="ArcadeButtonUp" index="0" unique_id=1693972737]
 sprite_frames = SubResource("SpriteFrames_ya4ey")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ArcadeButtonUp" unique_id=1006580419]
+stream = ExtResource("4_muem4")
+
 [node name="ArcadeButtonRight" parent="." unique_id=1237762229 instance=ExtResource("3_tbgi4")]
 position = Vector2(143, 151)
 directional_action = SubResource("InputEventAction_tbgi4")
 
 [node name="AnimatedSprite2D" parent="ArcadeButtonRight" index="0" unique_id=1693972737]
 sprite_frames = SubResource("SpriteFrames_85g3d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ArcadeButtonRight" unique_id=2052230885]
+stream = ExtResource("4_muem4")
 
 [node name="ArcadeButtonAction" parent="." unique_id=493317942 instance=ExtResource("3_tbgi4")]
 position = Vector2(229, 151)
@@ -187,6 +202,9 @@ sprite_frames = SubResource("SpriteFrames_trceg")
 
 [node name="CollisionShape2D" parent="ArcadeButtonAction/Area2D" parent_id_path=PackedInt32Array(493317942, 2072963921) index="0" unique_id=1768119659]
 shape = SubResource("RectangleShape2D_a8y0u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ArcadeButtonAction" unique_id=933565925]
+stream = ExtResource("4_muem4")
 
 [node name="MapCollisions" type="StaticBody2D" parent="." unique_id=2028716468]
 collision_layer = 2

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/main/ant.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://mv12ccc5rndw" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://wyx4a3c056aa" path="res://components/feel_component.gd" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bhn3jag85mcju" path="res://sfx/Jump.wav" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
 
@@ -38,5 +39,8 @@ metadata/_custom_type_script = "uid://wyx4a3c056aa"
 [node name="JumpInputBufferTimer" type="Timer" parent="." unique_id=1531183627]
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1283544057]
+stream = ExtResource("4_dqkch")
 
 [connection signal="timeout" from="JumpInputBufferTimer" to="." method="_on_jump_input_buffer_timer_timeout"]
