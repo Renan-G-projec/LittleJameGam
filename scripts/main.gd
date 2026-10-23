@@ -1,5 +1,5 @@
 # Ad Maiorem Dei Gloriam!
-extends Node2D
+extends CanvasLayer
 
 func _ready() -> void:
 	pass
