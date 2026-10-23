@@ -11,11 +11,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	ball_pos = $"../Ball".position
-	dist = position.y - ball_pos.y
-	if abs(dist) > 0:
-		move_by = 200 * delta * (dist / abs(dist))
+	var ball = $"../Ball"
+
+	var dist = ball.global_position.y - global_position.y
+	var step = 200.0 * delta
+
+	if abs(dist) > step:
+		global_position.y += sign(dist) * step
+	else:
+		global_position.y = ball.global_position.y
 	
-	position.y -= move_by
-	
-	position.y = clamp(position.y, 0, 80)
+	position.y = clamp(position.y, 0.0, 80.0)
