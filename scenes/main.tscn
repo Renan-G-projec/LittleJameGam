@@ -1,6 +1,35 @@
 [gd_scene format=3 uid="uid://dfe3v2m4owlu7"]
 
 [ext_resource type="Script" uid="uid://bfn4o32h0lh8a" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/background.png" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1p6d"]
+distance = -154.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
+size = Vector2(34.5, 180)
 
 [node name="Main" type="Node2D" unique_id=1920575128]
 script = ExtResource("1_o5qli")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=264363825]
+texture = ExtResource("2_0wfyh")
+centered = false
+
+[node name="MapCollisions" type="StaticBody2D" parent="." unique_id=2028716468]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCollisions" unique_id=879869806]
+position = Vector2(160, 0)
+shape = SubResource("WorldBoundaryShape2D_d1p6d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapCollisions" unique_id=909664667]
+position = Vector2(16.5, 90)
+shape = SubResource("RectangleShape2D_d1p6d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapCollisions" unique_id=1575133643]
+position = Vector2(301.75, 90)
+shape = SubResource("RectangleShape2D_d1p6d")
+
+[node name="Player" parent="." unique_id=915638823 instance=ExtResource("3_sugp2")]
+position = Vector2(76, 136)
