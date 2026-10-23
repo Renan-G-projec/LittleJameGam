@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LittleJameGam"
-run/main_scene="uid://dfe3v2m4owlu7"
+run/main_scene="uid://cv4pi82xsqqji"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

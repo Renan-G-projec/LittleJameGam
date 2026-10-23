@@ -24,6 +24,9 @@ func go_to_scene(scene_file: String) -> void:
 	tween.tween_property(self, "_progress", 0.0, transition_time)
 	await tween.finished
 	
+	var shader: ShaderMaterial = %ColorRect.material as ShaderMaterial
+	if shader:
+		shader.set_shader_parameter("animation_progress", 0.0)
 	_in_transition = false
 
 func _process(delta: float) -> void:

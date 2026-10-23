@@ -11,6 +11,7 @@ shader_parameter/dot_size = 1.0
 shader_parameter/dot_color = Color(0, 0, 0, 1)
 
 [node name="TransitionManager" type="CanvasLayer" unique_id=480070311]
+layer = 3
 script = ExtResource("1_gwwrh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=374115947]
