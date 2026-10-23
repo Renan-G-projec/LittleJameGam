@@ -6,7 +6,7 @@ var speed : int
 var dir : Vector2
 
 func _ready() -> void:
-	newBall()
+	pass
 	
 func newBall():
 	position.x = 45
