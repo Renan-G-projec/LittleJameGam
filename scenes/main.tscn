@@ -8,15 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/main/directional_buttons.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://8yohacxvbbqq" path="res://scripts/arcade.gd" id="7_tipki"]
-[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/main/ant.png" id="9_85g3d"]
-[ext_resource type="Script" uid="uid://bb2ycee4jiey5" path="res://scripts/pong/paddle.gd" id="10_choun"]
-[ext_resource type="Script" uid="uid://cthxyrousbhih" path="res://scripts/pong/pong.gd" id="10_jkv2x"]
-[ext_resource type="Texture2D" uid="uid://bi1xs8hl7nt5o" path="res://sprites/pong/paddle.png" id="11_eb6dy"]
-[ext_resource type="Script" uid="uid://dtvwbs7wmvo1c" path="res://scripts/pong/ball.gd" id="11_ya4ey"]
-[ext_resource type="Script" uid="uid://bviuscfdtdhnk" path="res://scripts/pong/cpu.gd" id="12_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="13_trceg"]
-[ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://sprites/PublicPixel-rv0pA.ttf" id="16_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -130,23 +122,6 @@ distance = -154.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
 size = Vector2(34.5, 180)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(226, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(6, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
-size = Vector2(20, 9.459301)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
-size = Vector2(168, 9.875)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
-size = Vector2(20, 85)
-
 [node name="Main" type="CanvasLayer" unique_id=692422005]
 script = ExtResource("1_o5qli")
 
@@ -242,130 +217,8 @@ theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 7
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=520108443]
-visible = false
-position = Vector2(68, 9)
-script = ExtResource("7_tipki")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/CharacterBody2D" unique_id=1011998384]
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Sprite2D" type="Sprite2D" parent="Screen/MarginContainer/Screen/CharacterBody2D" unique_id=1195829917]
-texture = ExtResource("9_85g3d")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="1" unique_id=537608773]
-visible = false
-position = Vector2(71, 67)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/StaticBody2D" unique_id=2036173340]
-shape = SubResource("RectangleShape2D_yf5fn")
-
-[node name="PONG" type="Control" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="2" unique_id=1295410461]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("10_jkv2x")
-
-[node name="Paddle" type="StaticBody2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=2027674616]
-position = Vector2(4, 13)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("10_choun")
-speed = 80
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/Paddle" unique_id=474378498]
-shape = SubResource("RectangleShape2D_57qmd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Screen/MarginContainer/Screen/PONG/Paddle" unique_id=1852395244]
-texture = ExtResource("11_eb6dy")
-
-[node name="CPU" type="StaticBody2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=1964839819]
-position = Vector2(142, 13)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("12_a8y0u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/CPU" unique_id=1631213965]
-shape = SubResource("RectangleShape2D_57qmd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Screen/MarginContainer/Screen/PONG/CPU" unique_id=163330043]
-texture = ExtResource("11_eb6dy")
-
-[node name="Ball" type="CharacterBody2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=511351539]
-position = Vector2(73, 38)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("11_ya4ey")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/Ball" unique_id=217818740]
-scale = Vector2(0.26295537, -0.63429683)
-shape = SubResource("RectangleShape2D_eb6dy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Screen/MarginContainer/Screen/PONG/Ball" unique_id=2082065600]
-texture = ExtResource("13_trceg")
-
-[node name="borders" type="StaticBody2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=1606548518]
-position = Vector2(72, 38)
-collision_layer = 8
-collision_mask = 12
-
-[node name="top" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/borders" unique_id=1452152476]
-position = Vector2(2, -47.9375)
-shape = SubResource("RectangleShape2D_3gngh")
-
-[node name="bottom" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/borders" unique_id=353744161]
-position = Vector2(2, 46.875)
-shape = SubResource("RectangleShape2D_3gngh")
-
-[node name="ScoreLeft" type="Area2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=1218575641]
-position = Vector2(-10, 35)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/ScoreLeft" unique_id=1382495045]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_fcnqv")
-
-[node name="ScoreRight" type="Area2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=132990577]
-position = Vector2(156, 35)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/ScoreRight" unique_id=584969531]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_fcnqv")
-
-[node name="BallTimer" type="Timer" parent="Screen/MarginContainer/Screen/PONG" unique_id=1067513974]
-one_shot = true
-autostart = true
-
-[node name="Score" type="CanvasLayer" parent="Screen/MarginContainer/Screen/PONG" unique_id=1022451265]
-
-[node name="PlayerScore" type="Label" parent="Screen/MarginContainer/Screen/PONG/Score" unique_id=232761420]
-offset_left = 123.0
-offset_top = 18.0
-offset_right = 163.0
-offset_bottom = 41.0
-theme_override_fonts/font = ExtResource("16_jbj1t")
-theme_override_font_sizes/font_size = 8
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CPUScore" type="Label" parent="Screen/MarginContainer/Screen/PONG/Score" unique_id=2112567813]
-offset_left = 163.0
-offset_top = 18.0
-offset_right = 203.0
-offset_bottom = 41.0
-theme_override_fonts/font = ExtResource("16_jbj1t")
-theme_override_font_sizes/font_size = 8
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="body_entered" from="Screen/MarginContainer/Screen/PONG/ScoreLeft" to="Screen/MarginContainer/Screen/PONG" method="_on_score_left_body_entered"]
-[connection signal="body_entered" from="Screen/MarginContainer/Screen/PONG/ScoreRight" to="Screen/MarginContainer/Screen/PONG" method="_on_score_left_body_entered"]
-[connection signal="timeout" from="Screen/MarginContainer/Screen/PONG/BallTimer" to="Screen/MarginContainer/Screen/PONG" method="_on_ball_timer_timeout"]
+[node name="PONG" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=739241883 instance=ExtResource("9_85g3d")]
+layout_mode = 0
 
 [editable path="ArcadeButtonLeft"]
 [editable path="ArcadeButtonDown"]
