@@ -5,12 +5,16 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
+const DASH_VELOCITY = 800.0
 
 @onready var _sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var _feel_component: FeelComponent = $FeelComponent
 @onready var _jump_input_buffer_timer: Timer = $JumpInputBufferTimer
 
 var _jump_input_buffer: bool = false
+var _can_dash: bool = false
+
+var _facing_direction: int = 1
 
 func _physics_process(delta: float) -> void:
 	_update_velocity(delta)
@@ -34,15 +38,33 @@ func _update_velocity(delta: float) -> void:
 	
 	var direction := Input.get_axis("ant_move_left", "ant_move_right")
 	if direction:
-		velocity.x = direction * SPEED
+		if abs(velocity.x) < abs(SPEED * direction): 
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = lerpf(velocity.x, SPEED * direction, delta * 15)
+			
+		_facing_direction = sign(direction)
 		_sprite.flip_h = direction < 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = lerpf(velocity.x, 0, delta * 15)
+		
+	
+	if _can_dash && Input.is_action_just_pressed("ant_dash"):
+		_dash(DASH_VELOCITY, _facing_direction)
 
 func _jump() -> void:
 	_jump_input_buffer = false
+	_can_dash = true
 	velocity.y = JUMP_VELOCITY
-	_feel_component.squash_animation(_sprite, Vector2(0.7, 1.3), 0.2)
+	_feel_component.squash_animation(_sprite, Vector2(0.5, 1.5), 0.4)
 
+func _dash(force: float, direction: int) -> void:
+	if !_can_dash: return
+	_can_dash = false
+	
+	velocity.x = force * direction
+	_sprite.flip_h = direction < 0
+	_feel_component.squash_animation(_sprite, Vector2(1.5, 0.5), 0.4)
+	
 func _on_jump_input_buffer_timer_timeout() -> void:
 	_jump_input_buffer = false
