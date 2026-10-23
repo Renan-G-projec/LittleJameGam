@@ -75,9 +75,17 @@ func _on_jump_input_buffer_timer_timeout() -> void:
 	_jump_input_buffer = false
 ### ANIMATION ###
 func sway(delta: float) -> void:
-	if velocity.length() > 0.99:
-		animation_time += delta * 10.0
-		rotation = sin(animation_time) * 0.2 * direction
+	if is_on_floor():
+		if velocity.length() > 0.99:
+			animation_time += delta * 10.0
+			rotation = sin(animation_time) * 0.2 * direction
+		else:
+			rotation = lerp_angle(rotation, 0.0, 0.1)
+			animation_time = 0.0
 	else:
-		rotation = lerp_angle(rotation, 0.0, 0.1)
-		animation_time = 0.0
+		if velocity.length() > 0:
+			animation_time += delta * 10.0
+			rotation = sin(animation_time) * 0.2
+		else:
+			rotation = lerp_angle(rotation, 0.0, 0.1)
+			animation_time = 0.0
