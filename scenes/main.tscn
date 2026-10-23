@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="4_tefeu"]
-[ext_resource type="Texture2D" uid="uid://dqvp6q5i3hjee" path="res://icon.svg" id="4_tipki"]
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://8yohacxvbbqq" path="res://scripts/arcade.gd" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/ant.png" id="9_85g3d"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -121,37 +122,17 @@ distance = -154.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
 size = Vector2(34.5, 180)
 
-[node name="Main" type="CanvasLayer" unique_id=779219493]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(226, 20)
+
+[node name="Main" type="CanvasLayer" unique_id=692422005]
 script = ExtResource("1_o5qli")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=264363825]
 texture = ExtResource("2_0wfyh")
 centered = false
-
-[node name="Screen" parent="." unique_id=187329371 instance=ExtResource("7_o6xl0")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = -26.294998
-offset_bottom = -26.294998
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MarginContainer" parent="Screen" index="0" unique_id=1825244430]
-theme_override_constants/margin_left = 7
-theme_override_constants/margin_top = 7
-theme_override_constants/margin_right = 7
-theme_override_constants/margin_bottom = 7
-
-[node name="Icon" type="Sprite2D" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=1641851974]
-modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(68, 35.295)
-scale = Vector2(2.328125, 1.2734375)
-texture = ExtResource("4_tipki")
 
 [node name="ArcadeButtonLeft" parent="." unique_id=34883181 instance=ExtResource("3_tbgi4")]
 position = Vector2(71, 151)
@@ -207,9 +188,42 @@ shape = SubResource("RectangleShape2D_d1p6d")
 [node name="Player" parent="." unique_id=915638823 instance=ExtResource("3_sugp2")]
 position = Vector2(98, 124)
 
-[editable path="Screen"]
+[node name="Screen" parent="." unique_id=187329371 instance=ExtResource("7_o6xl0")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" parent="Screen" index="0" unique_id=1825244430]
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=520108443]
+position = Vector2(68, 9)
+script = ExtResource("7_tipki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/CharacterBody2D" unique_id=1011998384]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Screen/MarginContainer/Screen/CharacterBody2D" unique_id=1195829917]
+texture = ExtResource("9_85g3d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="1" unique_id=537608773]
+position = Vector2(71, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/StaticBody2D" unique_id=2036173340]
+shape = SubResource("RectangleShape2D_yf5fn")
+
 [editable path="ArcadeButtonLeft"]
 [editable path="ArcadeButtonUp"]
 [editable path="ArcadeButtonDown"]
 [editable path="ArcadeButtonRight"]
 [editable path="ArcadeButtonAction"]
+[editable path="Screen"]

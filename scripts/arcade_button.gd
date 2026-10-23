@@ -14,12 +14,14 @@ func _activate() -> void:
 	sprite.frame = 1
 	_active = true
 	directional_action.pressed = true
+	Input.action_press(directional_action.action)
 
 func _deactivate() -> void:
 	feel_component.squash_animation(sprite, Vector2(0.9, 1.1))
 	sprite.frame = 0
 	_active = false
 	directional_action.pressed = false
+	Input.action_release(directional_action.action)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	_activate()
