@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://e148cd4dwwmi" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://dfqi2ln1p53xt" path="res://sprites/menu.png" id="2_vjb58"]
 [ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="3_con2f"]
-[ext_resource type="AudioStream" uid="uid://c1uw05swvhct1" path="res://sfx/click.wav" id="4_mhnvy"]
+[ext_resource type="AudioStream" uid="uid://bqwl8vpnsg3cl" path="res://sfx/click.wav" id="4_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://duluklo8plc7h" path="res://sfx/menu_sound.mp3" id="5_4ytvr"]
 
 [node name="Menu" type="Control" unique_id=2114092794]
 layout_mode = 3
@@ -68,4 +69,11 @@ text = "Exit"
 fit_content = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=753410084]
-stream = ExtResource("4_mhnvy")
+stream = ExtResource("4_4ytvr")
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=820081840]
+stream = ExtResource("5_4ytvr")
+volume_db = -13.222
+pitch_scale = 0.62
+autoplay = true
