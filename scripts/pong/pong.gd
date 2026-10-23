@@ -12,14 +12,16 @@ func _process(delta: float) -> void:
 
 
 func _on_score_left_body_entered(body: Node2D) -> void:
-	print("dadada")
 	score[1] += 1
+	print(body)
 	$BallTimer.start(1)
+	$Score/CPUScore.text = str(score[1])
+	
 
 func _on_score_right_body_entered(body: Node2D) -> void:
-	print("wswswsww")
 	score[0] += 1
 	$BallTimer.start(1)
+	$Score/PlayerScore.text = str(score[0])
 
 
 func _on_ball_timer_timeout() -> void:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b33drau0ew2fo"]
 
-[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/ant.png" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/main/ant.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://mv12ccc5rndw" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://wyx4a3c056aa" path="res://components/feel_component.gd" id="3_qhqgy"]
 

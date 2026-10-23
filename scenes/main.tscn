@@ -1,48 +1,24 @@
 [gd_scene format=3 uid="uid://dfe3v2m4owlu7"]
 
 [ext_resource type="Script" uid="uid://bfn4o32h0lh8a" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/background.png" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/main/background.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="4_tefeu"]
-[ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main_button.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/main/directional_buttons.png" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://8yohacxvbbqq" path="res://scripts/arcade.gd" id="7_tipki"]
-[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/ant.png" id="9_85g3d"]
+[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/main/ant.png" id="9_85g3d"]
 [ext_resource type="Script" uid="uid://bb2ycee4jiey5" path="res://scripts/pong/paddle.gd" id="10_choun"]
 [ext_resource type="Script" uid="uid://cthxyrousbhih" path="res://scripts/pong/pong.gd" id="10_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://bi1xs8hl7nt5o" path="res://sprites/pong/paddle.png" id="11_eb6dy"]
 [ext_resource type="Script" uid="uid://dtvwbs7wmvo1c" path="res://scripts/pong/ball.gd" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://bviuscfdtdhnk" path="res://scripts/pong/cpu.gd" id="12_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="13_trceg"]
+[ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://sprites/PublicPixel-rv0pA.ttf" id="16_jbj1t"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
-
-[sub_resource type="InputEventAction" id="InputEventAction_o6xl0"]
-action = &"directional_up"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
-atlas = ExtResource("4_tefeu")
-region = Rect2(0, 20, 18, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
-atlas = ExtResource("4_tefeu")
-region = Rect2(18, 20, 18, 20)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ya4ey"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85g3d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_choun")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tefeu"]
 action = &"directional_down"
@@ -63,6 +39,31 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tefeu")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_o6xl0"]
+action = &"directional_up"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(0, 20, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
+atlas = ExtResource("4_tefeu")
+region = Rect2(18, 20, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya4ey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_choun")
 }],
 "loop": 0,
 "name": &"default",
@@ -156,19 +157,19 @@ centered = false
 position = Vector2(71, 151)
 directional_action = SubResource("InputEventAction_tipki")
 
-[node name="ArcadeButtonUp" parent="." unique_id=1469390153 instance=ExtResource("3_tbgi4")]
-position = Vector2(94, 151)
-directional_action = SubResource("InputEventAction_o6xl0")
-
-[node name="AnimatedSprite2D" parent="ArcadeButtonUp" index="0" unique_id=1693972737]
-sprite_frames = SubResource("SpriteFrames_ya4ey")
-
 [node name="ArcadeButtonDown" parent="." unique_id=1354454935 instance=ExtResource("3_tbgi4")]
-position = Vector2(118, 151)
+position = Vector2(95, 151)
 directional_action = SubResource("InputEventAction_tefeu")
 
 [node name="AnimatedSprite2D" parent="ArcadeButtonDown" index="0" unique_id=1693972737]
 sprite_frames = SubResource("SpriteFrames_o6xl0")
+
+[node name="ArcadeButtonUp" parent="." unique_id=1469390153 instance=ExtResource("3_tbgi4")]
+position = Vector2(118, 151)
+directional_action = SubResource("InputEventAction_o6xl0")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonUp" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_ya4ey")
 
 [node name="ArcadeButtonRight" parent="." unique_id=1237762229 instance=ExtResource("3_tbgi4")]
 position = Vector2(143, 151)
@@ -301,7 +302,7 @@ shape = SubResource("RectangleShape2D_3gngh")
 [node name="ScoreLeft" type="Area2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=1218575641]
 position = Vector2(-10, 35)
 collision_layer = 8
-collision_mask = 12
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/ScoreLeft" unique_id=1382495045]
 position = Vector2(0, 2.5)
@@ -310,7 +311,7 @@ shape = SubResource("RectangleShape2D_fcnqv")
 [node name="ScoreRight" type="Area2D" parent="Screen/MarginContainer/Screen/PONG" unique_id=132990577]
 position = Vector2(156, 35)
 collision_layer = 8
-collision_mask = 12
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/MarginContainer/Screen/PONG/ScoreRight" unique_id=584969531]
 position = Vector2(0, 2.5)
@@ -320,13 +321,37 @@ shape = SubResource("RectangleShape2D_fcnqv")
 one_shot = true
 autostart = true
 
+[node name="Score" type="CanvasLayer" parent="Screen/MarginContainer/Screen/PONG" unique_id=1022451265]
+
+[node name="PlayerScore" type="Label" parent="Screen/MarginContainer/Screen/PONG/Score" unique_id=232761420]
+offset_left = 123.0
+offset_top = 18.0
+offset_right = 163.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("16_jbj1t")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CPUScore" type="Label" parent="Screen/MarginContainer/Screen/PONG/Score" unique_id=2112567813]
+offset_left = 163.0
+offset_top = 18.0
+offset_right = 203.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("16_jbj1t")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Screen/MarginContainer/Screen/PONG/ScoreLeft" to="Screen/MarginContainer/Screen/PONG" method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="Screen/MarginContainer/Screen/PONG/ScoreRight" to="Screen/MarginContainer/Screen/PONG" method="_on_score_left_body_entered"]
 [connection signal="timeout" from="Screen/MarginContainer/Screen/PONG/BallTimer" to="Screen/MarginContainer/Screen/PONG" method="_on_ball_timer_timeout"]
 
 [editable path="ArcadeButtonLeft"]
-[editable path="ArcadeButtonUp"]
 [editable path="ArcadeButtonDown"]
+[editable path="ArcadeButtonUp"]
 [editable path="ArcadeButtonRight"]
 [editable path="ArcadeButtonAction"]
 [editable path="Screen"]
