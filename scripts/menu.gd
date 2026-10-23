@@ -8,3 +8,4 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	TransitionManager.go_to_scene("res://scenes/main.tscn")
 	print("SKJSAFJ")
+	print("quem foi o genio que colocou isso? :sob:")
