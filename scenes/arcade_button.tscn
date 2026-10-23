@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cxhpwp060almc"]
 
 [ext_resource type="Script" uid="uid://bgd3a6bg3kdvh" path="res://scripts/arcade_button.gd" id="1_qlcnn"]
-[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="2_8xy88"]
+[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/main/directional_buttons.png" id="2_8xy88"]
 [ext_resource type="Script" uid="uid://wyx4a3c056aa" path="res://components/feel_component.gd" id="3_wgp3x"]
+[ext_resource type="AudioStream" uid="uid://c1uw05swvhct1" path="res://sfx/click.wav" id="4_54lvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgp3x"]
 atlas = ExtResource("2_8xy88")
@@ -44,6 +45,10 @@ shape = SubResource("RectangleShape2D_d1p6d")
 [node name="FeelComponent" type="Node" parent="." unique_id=1289268970]
 script = ExtResource("3_wgp3x")
 metadata/_custom_type_script = "uid://wyx4a3c056aa"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=287546964]
+stream = ExtResource("4_54lvw")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

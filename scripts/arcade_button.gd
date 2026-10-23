@@ -6,7 +6,7 @@ extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var feel_component: FeelComponent = $FeelComponent
-@onready var sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sfx: AudioStreamPlayer = $AudioStreamPlayer
 
 var _active: bool = true
 
@@ -16,8 +16,7 @@ func _activate() -> void:
 	_active = true
 	directional_action.pressed = true
 	Input.action_press(directional_action.action)
-	sfx.pitch_scale = randf_range(1, 2)
-	sfx.play()
+	
 
 func _deactivate() -> void:
 	feel_component.squash_animation(sprite, Vector2(0.9, 1.1))
@@ -28,6 +27,11 @@ func _deactivate() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	_activate()
+	sfx.pitch_scale = randf_range(1, 2)
+	sfx.play()
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	_deactivate()
+	sfx.pitch_scale = randf_range(0.5, 1.5)
+	sfx.play()
+	
