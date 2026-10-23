@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/directional_buttons.png" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main_button.png" id="5_tefeu"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -84,6 +85,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="InputEventAction" id="InputEventAction_wgp3x"]
+action = &"main_action"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(0, 0, 37, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(37, 0, 37, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trceg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb6dy")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8y0u"]
+size = Vector2(30, 10.5)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1p6d"]
 distance = -154.0
 
@@ -122,6 +151,16 @@ directional_action = SubResource("InputEventAction_tbgi4")
 [node name="AnimatedSprite2D" parent="ArcadeButtonRight" index="0" unique_id=1693972737]
 sprite_frames = SubResource("SpriteFrames_85g3d")
 
+[node name="ArcadeButtonAction" parent="." unique_id=493317942 instance=ExtResource("3_tbgi4")]
+position = Vector2(229, 151)
+directional_action = SubResource("InputEventAction_wgp3x")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonAction" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_trceg")
+
+[node name="CollisionShape2D" parent="ArcadeButtonAction/Area2D" parent_id_path=PackedInt32Array(493317942, 2072963921) index="0" unique_id=1768119659]
+shape = SubResource("RectangleShape2D_a8y0u")
+
 [node name="MapCollisions" type="StaticBody2D" parent="." unique_id=2028716468]
 collision_layer = 2
 collision_mask = 0
@@ -145,3 +184,4 @@ position = Vector2(98, 124)
 [editable path="ArcadeButtonUp"]
 [editable path="ArcadeButtonDown"]
 [editable path="ArcadeButtonRight"]
+[editable path="ArcadeButtonAction"]

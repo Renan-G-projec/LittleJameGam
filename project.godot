@@ -67,6 +67,10 @@ directional_down={
 "deadzone": 0.2,
 "events": []
 }
+main_action={
+"deadzone": 0.2,
+"events": []
+}
 
 [layer_names]
 
