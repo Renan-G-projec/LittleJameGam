@@ -35,5 +35,9 @@ collision_mask = 12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=618937282]
 shape = SubResource("CircleShape2D_g4v7s")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=340798392]
+rect = Rect2(-3, -3, 6, 6)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
