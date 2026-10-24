@@ -220,7 +220,7 @@ layout_mode = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=938379663]
 stream = ExtResource("11_ya4ey")
-volume_db = -23.921
+volume_db = -18.04
 pitch_scale = 0.75
 autoplay = true
 
