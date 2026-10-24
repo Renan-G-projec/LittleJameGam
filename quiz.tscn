@@ -1,3 +1,158 @@
 [gd_scene format=3 uid="uid://belhc3m2ypwpe"]
 
-[node name="Node2D" type="Node2D" unique_id=1358772905]
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="1_i0i4q"]
+[ext_resource type="Script" uid="uid://bqi8wpumjieoy" path="res://quiz.gd" id="1_rmnlm"]
+[ext_resource type="Texture2D" uid="uid://fwos32hf17oo" path="res://sprites/quiz/main_button.png" id="2_rmnlm"]
+[ext_resource type="Script" uid="uid://birtymx0ceu2a" path="res://l.gd" id="3_ngcn3"]
+
+[node name="Control" type="Control" unique_id=606861725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_rmnlm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1066870950]
+layout_mode = 0
+offset_right = 322.0
+offset_bottom = 40.0
+theme = ExtResource("1_i0i4q")
+text = "   1) this is a question!"
+justification_flags = 0
+
+[node name="l" type="Sprite2D" parent="." unique_id=1389911057]
+position = Vector2(82, 54)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_rmnlm")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 19)
+script = ExtResource("3_ngcn3")
+
+[node name="sgn" type="RichTextLabel" parent="l" unique_id=2121490480]
+offset_left = -24.8
+offset_top = -6.400003
+offset_right = 8.799999
+offset_bottom = 33.599995
+scale = Vector2(0.4, 0.4)
+theme = ExtResource("1_i0i4q")
+text = "<"
+
+[node name="tex" type="RichTextLabel" parent="l" unique_id=1099833351]
+offset_left = -16.0
+offset_top = -7.2000027
+offset_right = 160.0
+offset_bottom = 43.999992
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_i0i4q")
+theme_override_constants/line_separation = -9
+text = "answerleft
+is an answer"
+tab_size = 3
+vertical_alignment = 1
+
+[node name="d" type="Sprite2D" parent="." unique_id=1868388314]
+position = Vector2(224.99995, 54)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_rmnlm")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 19)
+script = ExtResource("3_ngcn3")
+
+[node name="sgn" type="RichTextLabel" parent="d" unique_id=708664590]
+offset_left = -24.399975
+offset_top = -7.2
+offset_right = 9.200024
+offset_bottom = 32.799995
+scale = Vector2(0.4, 0.4)
+theme = ExtResource("1_i0i4q")
+text = "v"
+
+[node name="tex" type="RichTextLabel" parent="d" unique_id=707510476]
+offset_left = -16.0
+offset_top = -7.2000027
+offset_right = 160.0
+offset_bottom = 43.999992
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_i0i4q")
+theme_override_constants/line_separation = -9
+text = "answerleft
+is an answer"
+tab_size = 3
+vertical_alignment = 1
+
+[node name="u" type="Sprite2D" parent="." unique_id=1262414766]
+position = Vector2(82, 102.00003)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_rmnlm")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 19)
+script = ExtResource("3_ngcn3")
+
+[node name="sgn" type="RichTextLabel" parent="u" unique_id=1333582732]
+offset_left = -18.4
+offset_top = 5.599996
+offset_right = 15.199999
+offset_bottom = 45.59999
+rotation = -3.136461
+scale = Vector2(0.4, 0.4)
+theme = ExtResource("1_i0i4q")
+text = "v"
+
+[node name="tex" type="RichTextLabel" parent="u" unique_id=1923092866]
+offset_left = -16.0
+offset_top = -7.2000027
+offset_right = 160.0
+offset_bottom = 43.999992
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_i0i4q")
+theme_override_constants/line_separation = -9
+text = "answerleft
+is an answer"
+tab_size = 3
+vertical_alignment = 1
+
+[node name="r" type="Sprite2D" parent="." unique_id=769564633]
+position = Vector2(224.99995, 102.00003)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_rmnlm")
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 19)
+script = ExtResource("3_ngcn3")
+
+[node name="sgn" type="RichTextLabel" parent="r" unique_id=762332197]
+offset_left = -24.8
+offset_top = -6.400003
+offset_right = 8.799999
+offset_bottom = 33.599995
+scale = Vector2(0.4, 0.4)
+theme = ExtResource("1_i0i4q")
+text = ">"
+
+[node name="tex" type="RichTextLabel" parent="r" unique_id=1392234523]
+offset_left = -16.0
+offset_top = -7.2000027
+offset_right = 160.0
+offset_bottom = 43.999992
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_i0i4q")
+theme_override_constants/line_separation = -9
+text = "answerleft
+is an answer"
+tab_size = 3
+vertical_alignment = 1
+
+[node name="score" type="RichTextLabel" parent="." unique_id=1154481461]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 118.0
+offset_right = 214.0
+offset_bottom = 158.0
+theme = ExtResource("1_i0i4q")
+bbcode_enabled = true
+text = "[color=2c2]10[/color] / [color=c22]10[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
