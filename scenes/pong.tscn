@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://bviuscfdtdhnk" path="res://scripts/pong/cpu.gd" id="4_jjrnv"]
 [ext_resource type="Script" uid="uid://dtvwbs7wmvo1c" path="res://scripts/pong/ball.gd" id="5_osehs"]
 [ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="6_scnf6"]
+[ext_resource type="AudioStream" uid="uid://bbmcnikphwtk6" path="res://sfx/raquet_sound.wav" id="7_7q0or"]
 [ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://sprites/PublicPixel-rv0pA.ttf" id="7_e43i4"]
+[ext_resource type="AudioStream" uid="uid://cdpdbo0h4nvif" path="res://sfx/wall_bounce.wav" id="8_me32k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(6, 26)
@@ -64,6 +66,12 @@ shape = SubResource("RectangleShape2D_eb6dy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=95540432]
 texture = ExtResource("6_scnf6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ball" unique_id=2109741706]
+stream = ExtResource("7_7q0or")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Ball" unique_id=917468534]
+stream = ExtResource("8_me32k")
 
 [node name="borders" type="StaticBody2D" parent="." unique_id=1472693215]
 position = Vector2(72, 38)

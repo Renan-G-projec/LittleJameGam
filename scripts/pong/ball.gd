@@ -6,6 +6,9 @@ const accel = 5
 var speed : int
 var dir : Vector2
 
+@onready var sfx = $AudioStreamPlayer
+@onready var sfx2 = $AudioStreamPlayer2
+
 func _ready() -> void:
 	pass
 	
@@ -31,5 +34,7 @@ func _physics_process(delta: float) -> void:
 			dir = dir.bounce(collision.get_normal())
 			dir = dir + Vector2(0.0,randf_range(0,1))*sign(dir)
 			dir *= randf_range(1,1.05)
+			sfx.play()
 		else:
 			dir = dir.bounce(collision.get_normal())
+			sfx2.play()
