@@ -1,6 +1,7 @@
 # Ad Maiorem Dei Gloriam!
 extends CanvasLayer
 
+
 @export var _current_minigame: int = 0:
 	set(new_minigame):
 		new_minigame = clamp(new_minigame, 0, _minigames_list.size() - 1)
@@ -28,6 +29,10 @@ func _ready():
 		minigame.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	_minigames_list[_current_minigame].process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if Global.tutorial_completed:
+		_current_minigame = 1
+		
 	_activate_current_minigame()
 
 func go_to_next_minigame() -> void:

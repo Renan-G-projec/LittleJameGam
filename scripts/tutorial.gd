@@ -39,4 +39,5 @@ func _process(delta: float) -> void:
 	text.text = texts[text_count]
 	
 	if text_count >= 3:
+		Global.tutorial_completed = true
 		completed.emit()
