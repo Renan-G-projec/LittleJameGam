@@ -64,12 +64,12 @@ func _process(delta: float) -> void:
 
 func _play_game_button() -> void:
 	var view_size: float = get_viewport_rect().size.x
-	var num_frames: int = $TextureRect.size.x / view_size
+	var num_frames: int = $Control/TextureRect.size.x / view_size
 	
 	TransitionManager.go_to_scene("res://scenes/main.tscn")
 	
 	for frame in range(num_frames):
-		$TextureRect.position.x -= view_size
+		$Control/TextureRect.position.x -= view_size
 		
 		# Go a little earlier
 		await get_tree().create_timer(0.05).timeout

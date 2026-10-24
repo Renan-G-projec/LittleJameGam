@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dnurlgparawqa" path="res://sfx/press.wav" id="6_g3eks"]
 
 [node name="Menu" type="Control" unique_id=2114092794]
+custom_maximum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +18,16 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_yqeox")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=66735998]
+[node name="Control" type="Control" parent="." unique_id=473620655]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=66735998]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
