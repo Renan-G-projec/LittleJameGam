@@ -44,7 +44,6 @@ offset_bottom = 40.0
 script = ExtResource("1_qtunw")
 
 [node name="final plataform" type="StaticBody2D" parent="." unique_id=561195044]
-z_index = 1
 position = Vector2(70, 28)
 collision_layer = 8
 collision_mask = 4
@@ -58,7 +57,6 @@ one_way_collision = true
 texture = ExtResource("1_1oo2v")
 
 [node name="plataform2" type="StaticBody2D" parent="." unique_id=1270948987]
-z_index = 1
 position = Vector2(71, 46)
 scale = Vector2(-1, 1)
 collision_layer = 8
@@ -88,7 +86,6 @@ shape = SubResource("RectangleShape2D_gbytk")
 one_way_collision = true
 
 [node name="plataform1" type="StaticBody2D" parent="." unique_id=1407160204]
-z_index = 1
 position = Vector2(71, 70)
 collision_layer = 8
 collision_mask = 4
@@ -136,10 +133,12 @@ target_position = Vector2(0, 21)
 collision_mask = 12
 
 [node name="Ladder" parent="." unique_id=1313962710 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
+z_index = -1
 position = Vector2(113, 58)
 collision_layer = 8
 
 [node name="Ladder2" parent="." unique_id=1226903622 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
+z_index = -1
 position = Vector2(28, 40)
 collision_layer = 8
 

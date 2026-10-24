@@ -1,6 +1,6 @@
 # Ad Maiorem Dei Gloriam!
 extends CanvasLayer
-
+var s := false
 
 @export var _current_minigame: int = 0:
 	set(new_minigame):
@@ -37,7 +37,8 @@ func _ready():
 
 func go_to_next_minigame() -> void:
 	TransitionManager.create_transition(0.1, 0.2, 0.1)
-	
+	s = false
+	$GameOver.visible = false
 	if _current_minigame == _minigames_list.size() - 1:
 		_finish_game()
 	_current_minigame += 1
@@ -46,11 +47,22 @@ func go_to_next_minigame() -> void:
 
 func _on_minigame_completed() -> void:
 	_screenshake(4)
-	go_to_next_minigame()
+	if _current_minigame == 0:
+		go_to_next_minigame()
+	else:
+		s = true
+		$GameOver.color = Color(0.0, 0.121, 0.05, 0.847)
+		$GameOver/tex.text = "[wave amp=8.0 freq=2.0 connected=0][b]You Win![/b]
+	Press the action button to proceed"
+		$GameOver.visible = true
 
 func _on_minigame_gameover() -> void:
 	_screenshake(10)
-	go_to_next_minigame()
+	s = true
+	$GameOver.color = Color(0.212, 0.0, 0.0, 0.847)
+	$GameOver/tex.text = "[wave amp=8.0 freq=2.0 connected=0][b]Game Over[/b]
+Press the action button to proceed"
+	$GameOver.visible = true
 
 func _on_minigame_earned_points(points: int) -> void:
 	_screenshake(1)
@@ -99,3 +111,5 @@ func _process(delta: float) -> void:
 		if _screenshake_force <= 1:
 			_screenshake_active = false
 			offset = Vector2.ZERO
+	if s and Input.is_action_just_pressed("main_action"):
+			go_to_next_minigame()

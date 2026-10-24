@@ -4,13 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/main/background.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dt8djhpnpwx4e" path="res://sprites/main/backgroundsc.png" id="3_trceg"]
 [ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/main/directional_buttons.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://deqmmneen2hcc" path="res://scenes/tutorial.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="9_choun"]
-[ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://belhc3m2ypwpe" path="res://quiz.tscn" id="11_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="13_a8y0u"]
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="14_a8y0u"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -132,6 +135,21 @@ unique_name_in_owner = true
 texture = ExtResource("2_0wfyh")
 centered = false
 
+[node name="Background2" type="Sprite2D" parent="." unique_id=537479377]
+unique_name_in_owner = true
+z_index = -2
+position = Vector2(82, 24)
+texture = ExtResource("3_trceg")
+centered = false
+
+[node name="Background3" type="Sprite2D" parent="." unique_id=1678867441]
+unique_name_in_owner = true
+modulate = Color(0.43, 0.43, 0.43, 0.40392157)
+z_index = 2
+position = Vector2(82, 24)
+texture = ExtResource("3_trceg")
+centered = false
+
 [node name="ArcadeButtonLeft" parent="." unique_id=34883181 instance=ExtResource("3_tbgi4")]
 position = Vector2(71, 151)
 directional_action = SubResource("InputEventAction_tipki")
@@ -199,30 +217,73 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" parent="Screen" index="0" unique_id=1825244430]
+propagate_maximum_size = false
+clip_contents = false
 theme_override_constants/margin_left = 7
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 7
 
-[node name="Control" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=1525755763 instance=ExtResource("8_choun")]
+[node name="Screen" parent="Screen/MarginContainer" index="0" unique_id=726290361]
+z_index = -1
+clip_contents = false
+
+[node name="Control" parent="Screen/MarginContainer/Screen" index="0" unique_id=1525755763 instance=ExtResource("8_choun")]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 1.0
 offset_bottom = 0.0
 
-[node name="PONG" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="1" unique_id=739241883 instance=ExtResource("9_85g3d")]
+[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=739241883 instance=ExtResource("9_85g3d")]
+visible = false
+layout_mode = 0
+offset_left = -4.0
+offset_right = 36.0
+
+[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="2" unique_id=1365692014 instance=ExtResource("9_choun")]
 visible = false
 layout_mode = 0
 
-[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="2" unique_id=1365692014 instance=ExtResource("9_choun")]
+[node name="Quiz" parent="Screen/MarginContainer/Screen" index="3" unique_id=606861725 instance=ExtResource("11_ya4ey")]
 visible = false
-layout_mode = 0
+layout_mode = 1
+offset_left = -5.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=938379663]
-stream = ExtResource("11_ya4ey")
+stream = ExtResource("13_a8y0u")
 volume_db = -18.04
 pitch_scale = 0.75
 autoplay = true
+
+[node name="GameOver" type="ColorRect" parent="." unique_id=1290629229]
+visible = false
+z_index = -1
+offset_left = 80.0
+offset_top = 19.0
+offset_right = 243.0
+offset_bottom = 106.0
+color = Color(0.21176471, 0, 0, 0.84705883)
+
+[node name="tex" type="RichTextLabel" parent="GameOver" unique_id=1702980949]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 9.0
+offset_right = 677.0
+offset_bottom = 289.80002
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("14_a8y0u")
+theme_override_constants/line_separation = -9
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 128
+bbcode_enabled = true
+text = "[wave amp=8.0 freq=2.0 connected=0][b]Game Over[/b]
+Press the action button to proceed"
+tab_size = 3
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="ArcadeButtonLeft"]
 [editable path="ArcadeButtonDown"]

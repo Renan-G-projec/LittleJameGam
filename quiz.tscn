@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://fwos32hf17oo" path="res://sprites/quiz/main_button.png" id="2_rmnlm"]
 [ext_resource type="Script" uid="uid://birtymx0ceu2a" path="res://l.gd" id="3_ngcn3"]
 
-[node name="Control" type="Control" unique_id=606861725]
+[node name="Quiz" type="Control" unique_id=606861725]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,8 @@ layout_mode = 0
 offset_right = 322.0
 offset_bottom = 40.0
 theme = ExtResource("1_i0i4q")
-text = "   1) this is a question!"
+bbcode_enabled = true
+text = " 1) this is a question!"
 justification_flags = 0
 
 [node name="l" type="Sprite2D" parent="." unique_id=1389911057]
@@ -38,6 +39,7 @@ offset_right = 8.799999
 offset_bottom = 33.599995
 scale = Vector2(0.4, 0.4)
 theme = ExtResource("1_i0i4q")
+bbcode_enabled = true
 text = "<"
 
 [node name="tex" type="RichTextLabel" parent="l" unique_id=1099833351]
@@ -48,6 +50,7 @@ offset_bottom = 43.999992
 scale = Vector2(0.25, 0.25)
 theme = ExtResource("1_i0i4q")
 theme_override_constants/line_separation = -9
+bbcode_enabled = true
 text = "answerleft
 is an answer"
 tab_size = 3
@@ -68,6 +71,7 @@ offset_right = 9.200024
 offset_bottom = 32.799995
 scale = Vector2(0.4, 0.4)
 theme = ExtResource("1_i0i4q")
+bbcode_enabled = true
 text = "v"
 
 [node name="tex" type="RichTextLabel" parent="d" unique_id=707510476]
@@ -78,6 +82,7 @@ offset_bottom = 43.999992
 scale = Vector2(0.25, 0.25)
 theme = ExtResource("1_i0i4q")
 theme_override_constants/line_separation = -9
+bbcode_enabled = true
 text = "answerleft
 is an answer"
 tab_size = 3
@@ -99,6 +104,7 @@ offset_bottom = 45.59999
 rotation = -3.136461
 scale = Vector2(0.4, 0.4)
 theme = ExtResource("1_i0i4q")
+bbcode_enabled = true
 text = "v"
 
 [node name="tex" type="RichTextLabel" parent="u" unique_id=1923092866]
@@ -109,6 +115,7 @@ offset_bottom = 43.999992
 scale = Vector2(0.25, 0.25)
 theme = ExtResource("1_i0i4q")
 theme_override_constants/line_separation = -9
+bbcode_enabled = true
 text = "answerleft
 is an answer"
 tab_size = 3
@@ -129,6 +136,7 @@ offset_right = 8.799999
 offset_bottom = 33.599995
 scale = Vector2(0.4, 0.4)
 theme = ExtResource("1_i0i4q")
+bbcode_enabled = true
 text = ">"
 
 [node name="tex" type="RichTextLabel" parent="r" unique_id=1392234523]
@@ -139,6 +147,7 @@ offset_bottom = 43.999992
 scale = Vector2(0.25, 0.25)
 theme = ExtResource("1_i0i4q")
 theme_override_constants/line_separation = -9
+bbcode_enabled = true
 text = "answerleft
 is an answer"
 tab_size = 3
