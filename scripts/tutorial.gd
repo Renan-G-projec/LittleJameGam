@@ -6,7 +6,7 @@ var down = false
 var up = false
 var left = false
 var right = false
-
+var end = false
 signal completed()
 
 var texts = ["Try pressing that big button over there, you can use the arrow keys or a controller", 
@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 		text_count += 1
 	text.text = texts[text_count]
 	
-	if text_count >= 3:
+	if text_count >= 3 and not end:
 		Global.tutorial_completed = true
 		completed.emit()
+		end = true

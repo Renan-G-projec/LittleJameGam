@@ -10,11 +10,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$RichTextLabel.text = q[p][0]
-	$l/tex.text = q[p][1]
-	$d/tex.text = q[p][2]
-	$u/tex.text = q[p][3]
-	$r/tex.text = q[p][4]
+	$RichTextLabel.text = "[wave amp=8.0 freq=2.0 connected=0]" + q[p][0]
+	$l/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][1]
+	$d/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][2]
+	$u/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][3]
+	$r/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][4]
 	$score.text = "[color=2c2]"+str(score1)+"[/color] / [color=c22]"+str(score2)+"[/color]"
 	if Global.ans != 0 and Input.is_action_pressed("main_action"):
 		if Global.ans == q[p][5]:
