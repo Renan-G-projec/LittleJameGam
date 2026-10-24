@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dyfc2boo0d7mi"]
+
+[ext_resource type="Texture2D" uid="uid://c17xsdqy8d7iq" path="res://sprites/konkey dong/finalplataform.png" id="1_1oo2v"]
+[ext_resource type="Texture2D" uid="uid://c202n0hiyoydl" path="res://sprites/konkey dong/plataform.png" id="2_wsxj6"]
+[ext_resource type="Script" uid="uid://cqfa6y6j0fpm7" path="res://scripts/meriu/meriu.gd" id="3_hije1"]
+[ext_resource type="Texture2D" uid="uid://cuism7qn3mgek" path="res://sprites/konkey dong/meriu-Sheet.png" id="4_s6w72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtunw"]
+size = Vector2(109, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo45g"]
+size = Vector2(28, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7fe6"]
+size = Vector2(23, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn8wo"]
+size = Vector2(25, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbytk"]
+size = Vector2(35, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8bje"]
+radius = 4.0
+height = 10.0
+
+[node name="Konkey Dong" type="Control" unique_id=1365692014]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="final plataform" type="StaticBody2D" parent="." unique_id=561195044]
+position = Vector2(70, 25)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="final plataform" unique_id=1097134357]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qtunw")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="final plataform" unique_id=167569154]
+texture = ExtResource("1_1oo2v")
+
+[node name="plataform2" type="StaticBody2D" parent="." unique_id=1270948987]
+position = Vector2(71, 45)
+scale = Vector2(-1, 1)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="plataform2" unique_id=89771517]
+texture = ExtResource("2_wsxj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataform2" unique_id=1100374969]
+position = Vector2(-6, 0.5)
+shape = SubResource("RectangleShape2D_fo45g")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="plataform2" unique_id=185232637]
+position = Vector2(19.5, -0.5)
+shape = SubResource("RectangleShape2D_v7fe6")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="plataform2" unique_id=459017085]
+position = Vector2(42.5, -1.5)
+shape = SubResource("RectangleShape2D_vn8wo")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="plataform2" unique_id=236074106]
+position = Vector2(-37.5, 1.5)
+shape = SubResource("RectangleShape2D_gbytk")
+one_way_collision = true
+
+[node name="plataform1" type="StaticBody2D" parent="." unique_id=1407160204]
+position = Vector2(71, 70)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="plataform1" unique_id=2110431814]
+texture = ExtResource("2_wsxj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataform1" unique_id=176881052]
+position = Vector2(-6, 0.5)
+shape = SubResource("RectangleShape2D_fo45g")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="plataform1" unique_id=1559051266]
+position = Vector2(19.5, -0.5)
+shape = SubResource("RectangleShape2D_v7fe6")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="plataform1" unique_id=1739091482]
+position = Vector2(42.5, -1.5)
+shape = SubResource("RectangleShape2D_vn8wo")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="plataform1" unique_id=1764019354]
+position = Vector2(-37.5, 1.5)
+shape = SubResource("RectangleShape2D_gbytk")
+one_way_collision = true
+
+[node name="meriu" type="CharacterBody2D" parent="." unique_id=1022451830]
+position = Vector2(32, 56)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("3_hije1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meriu" unique_id=1770885485]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_r8bje")
+
+[node name="Sprite2D" type="Sprite2D" parent="meriu" unique_id=1672591539]
+texture = ExtResource("4_s6w72")
+hframes = 2

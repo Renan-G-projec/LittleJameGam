@@ -36,7 +36,7 @@ func _activate_current_label() -> void:
 func _process(delta: float) -> void:
 	var current_wanting_label: int = int(Input.is_action_just_pressed("ui_down")) - int(Input.is_action_just_pressed("ui_up"))
 	if current_wanting_label != 0:
-		
+		$AudioStreamPlayer2D2.play()
 		# Strectch effect on the previous option
 		_labels[_current_selected_label].offset_transform_scale = Vector2(1.2, 0.8)
 		var prev_selected_tween: Tween = _labels[_current_selected_label].create_tween()

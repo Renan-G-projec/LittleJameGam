@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey_dong.tscn" id="9_choun"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -180,6 +181,7 @@ position = Vector2(301.75, 90)
 shape = SubResource("RectangleShape2D_d1p6d")
 
 [node name="Player" parent="." unique_id=915638823 instance=ExtResource("3_sugp2")]
+z_index = 26
 position = Vector2(179, 121)
 
 [node name="Screen" parent="." unique_id=187329371 instance=ExtResource("7_o6xl0")]
@@ -200,6 +202,10 @@ theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 7
 
 [node name="PONG" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=739241883 instance=ExtResource("9_85g3d")]
+visible = false
+layout_mode = 0
+
+[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="1" unique_id=1365692014 instance=ExtResource("9_choun")]
 layout_mode = 0
 
 [editable path="ArcadeButtonLeft"]
