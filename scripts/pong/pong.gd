@@ -18,7 +18,7 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 	score[1] += 1
 	print(body)
 	$BallTimer.start(1)
-	$Score/CPUScore.text = str(score[1])
+	$CPUScore.text = str(score[1])
 	
 	if score[1] >= POINTS_TO_WIN:
 		gameover.emit()
@@ -29,7 +29,7 @@ func _on_score_right_body_entered(body: Node2D) -> void:
 	score[0] += 1
 	earned_points.emit(PONTUATION_BY_GOAL)
 	$BallTimer.start(1)
-	$Score/PlayerScore.text = str(score[0])
+	$PlayerScore.text = str(score[0])
 	
 	
 	if score[0] >= POINTS_TO_WIN:

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://deqmmneen2hcc"]
+
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="1_c13y7"]
+[ext_resource type="Script" uid="uid://ctsrvu5yb1ex8" path="res://scripts/tutorial.gd" id="1_ph3nu"]
+[ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://fonts/PublicPixel-rv0pA.ttf" id="2_8ho6b"]
+
+[node name="Control" type="Control" unique_id=1525755763]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ph3nu")
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=58418697]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 69.0
+offset_transform_enabled = true
+theme = ExtResource("1_c13y7")
+theme_override_fonts/normal_font = ExtResource("2_8ho6b")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "now let we see some moves, try pressing the arrows. did you know something happens when you press SHIFT/□"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

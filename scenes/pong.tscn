@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dtvwbs7wmvo1c" path="res://scripts/pong/ball.gd" id="5_osehs"]
 [ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="6_scnf6"]
 [ext_resource type="AudioStream" uid="uid://bbmcnikphwtk6" path="res://sfx/raquet_sound.wav" id="7_7q0or"]
-[ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://sprites/PublicPixel-rv0pA.ttf" id="7_e43i4"]
+[ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://fonts/PublicPixel-rv0pA.ttf" id="7_e43i4"]
 [ext_resource type="AudioStream" uid="uid://cdpdbo0h4nvif" path="res://sfx/wall_bounce.wav" id="8_me32k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
@@ -108,24 +108,24 @@ shape = SubResource("RectangleShape2D_fcnqv")
 one_shot = true
 autostart = true
 
-[node name="Score" type="CanvasLayer" parent="." unique_id=1786839319]
-
-[node name="PlayerScore" type="Label" parent="Score" unique_id=796560945]
-offset_left = 123.0
-offset_top = 18.0
-offset_right = 163.0
-offset_bottom = 41.0
+[node name="PlayerScore" type="Label" parent="." unique_id=796560945]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -5.0
+offset_right = 72.0
+offset_bottom = 18.0
 theme_override_fonts/font = ExtResource("7_e43i4")
 theme_override_font_sizes/font_size = 8
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CPUScore" type="Label" parent="Score" unique_id=963430489]
-offset_left = 163.0
-offset_top = 18.0
-offset_right = 203.0
-offset_bottom = 41.0
+[node name="CPUScore" type="Label" parent="." unique_id=963430489]
+layout_mode = 0
+offset_left = 72.0
+offset_top = -5.0
+offset_right = 112.0
+offset_bottom = 18.0
 theme_override_fonts/font = ExtResource("7_e43i4")
 theme_override_font_sizes/font_size = 8
 text = "0"

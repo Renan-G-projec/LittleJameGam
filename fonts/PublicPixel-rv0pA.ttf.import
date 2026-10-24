@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://282tc7brn0mm"
-path="res://.godot/imported/PublicPixel-rv0pA.ttf-6f99de3fe7ed5b6ca6e5c1b7862f841e.fontdata"
+path="res://.godot/imported/PublicPixel-rv0pA.ttf-ca757db85ecc833d25735037a8e29b48.fontdata"
 
 [deps]
 
-source_file="res://sprites/PublicPixel-rv0pA.ttf"
-dest_files=["res://.godot/imported/PublicPixel-rv0pA.ttf-6f99de3fe7ed5b6ca6e5c1b7862f841e.fontdata"]
+source_file="res://fonts/PublicPixel-rv0pA.ttf"
+dest_files=["res://.godot/imported/PublicPixel-rv0pA.ttf-ca757db85ecc833d25735037a8e29b48.fontdata"]
 
 [params]
 
