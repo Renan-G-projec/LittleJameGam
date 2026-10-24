@@ -183,5 +183,6 @@ hframes = 5
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_yf5fn")
 
+[connection signal="gameover" from="meriu" to="." method="_on_meriu_gameover"]
 [connection signal="timeout" from="Spwaner/SpawnTimer" to="Spwaner/SpawnTimer" method="_on_timeout"]
 [connection signal="body_entered" from="Monkey" to="Monkey" method="_on_body_entered"]

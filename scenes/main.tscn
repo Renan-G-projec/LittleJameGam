@@ -127,6 +127,7 @@ size = Vector2(34.5, 180)
 script = ExtResource("1_o5qli")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=264363825]
+unique_name_in_owner = true
 texture = ExtResource("2_0wfyh")
 centered = false
 
