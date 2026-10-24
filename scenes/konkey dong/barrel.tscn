@@ -4,13 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="1_q36op"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptqd7"]
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 3.0
 
 [node name="Barrel" type="RigidBody2D" unique_id=1534305740 groups=["Barrel"]]
 collision_layer = 4
 collision_mask = 12
+freeze_mode = 1
 script = ExtResource("1_g4maa")
-speed = 1000
+speed = 1200
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1185541600]
 texture = ExtResource("1_q36op")
@@ -19,7 +23,21 @@ texture = ExtResource("1_q36op")
 shape = SubResource("CircleShape2D_ptqd7")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1846575170]
-target_position = Vector2(-4, 4)
+target_position = Vector2(0, -7)
 collision_mask = 12
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1140835390]
+collision_layer = 4
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=618937282]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=340798392]
+rect = Rect2(-3, -3, 6, 6)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

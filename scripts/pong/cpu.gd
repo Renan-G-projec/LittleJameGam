@@ -14,11 +14,11 @@ func _process(delta: float) -> void:
 	var ball = $"../Ball"
 
 	var dist = ball.global_position.y - global_position.y
-	var step = 50.0 * delta
+	var step = 30.0 * delta
 
 	if abs(dist) > step:
 		global_position.y += sign(dist) * step
 	else:
 		global_position.y = ball.global_position.y
 	
-	position.y = clamp(position.y, 0.0, 80.0)
+	position.y = clamp(position.y, 15, 60)

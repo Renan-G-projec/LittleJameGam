@@ -12,7 +12,21 @@ var ogGravity = gravity
 
 var last_barrel
 
+var is_dying = false
+
+var animation_time: float = 0.0
+
+@onready var _sprite = $Sprite2D
+
 @onready var raycast = $RayCast2D
+
+var last_direction
+
+var direction
+
+signal completed()
+signal earned_points(points: int)
+signal gameover()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -43,19 +57,55 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("directional_left", "directional_right")
+	direction = Input.get_axis("directional_left", "directional_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+	if not is_on_floor() and !canClimb:
+			velocity.x = SPEED * _sprite.scale.x
+		
 	
 	
 	if direction > 0 and !isFacingRight:
-		self.scale.x = -1
+		_sprite.scale.x *= -1
 		isFacingRight = true
 	if direction < 0 and isFacingRight:
-		self.scale.x = -1
+		_sprite.scale.x *= -1
 		isFacingRight = false
 
 	move_and_slide()
+	
+	sway(delta)
+
+func Won():
+	completed.emit()
+
+func Die():
+	if is_dying:
+		return
+	
+	is_dying = true
+	$Sprite2D.frame = 1
+	
+	var start_position = position
+	var up_position = start_position + Vector2(0, -30)
+	var down_position = start_position + Vector2(0, 80)
+	
+	while position.y > up_position.y:
+		velocity.y = -60
+		await get_tree().create_timer(0.01).timeout
+	while position.y < down_position.y:
+		position.y += 2
+		await get_tree().create_timer(0.01).timeout
+	gameover.emit()
+
+func sway(delta: float) -> void:
+	if is_on_floor():
+		if velocity.length() > 0:
+			animation_time += delta * 10.0
+			_sprite.rotation = sin(animation_time) * 0.2 * direction
+		else:
+			_sprite.rotation = lerp_angle(rotation, 0.0, 0.1)
+			animation_time = 0.0

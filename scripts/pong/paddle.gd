@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("directional_down"):
 		position.y += speed * delta
 		
-	position.y = clamp(position.y, 0, 80)
+	position.y = clamp(position.y, 15, 60)
 	

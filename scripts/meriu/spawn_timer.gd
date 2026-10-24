@@ -1,7 +1,9 @@
 extends Timer
 
-@export var min_time: float = 2.0
-@export var max_time: float = 4.0
+@export var min_time: float = 3.0
+@export var max_time: float = 6.0
+
+@onready var monkey_spr = $"../../Monkey/Sprite"
 
 var barrel_scene = preload("res://scenes/konkey dong/barrel.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -11,10 +13,14 @@ func _ready() -> void:
 func setup():
 	var timeout_time = randf_range(min_time, max_time)
 	self.wait_time = timeout_time
+	
 	start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if time_left < 0.2:
+		monkey_spr.frame = 4
+	else:
+		monkey_spr.frame = 0
 
 
 func _on_timeout() -> void:
@@ -22,6 +28,7 @@ func _on_timeout() -> void:
 	spawnBarrel()
 
 func spawnBarrel():
+	monkey_spr.frame = 4
 	var barrel = barrel_scene.instantiate()
 	var parent = self.get_parent()
 	parent.add_child(barrel)

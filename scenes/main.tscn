@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://deqmmneen2hcc" path="res://scenes/tutorial.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="9_choun"]
+[ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="11_ya4ey"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -127,6 +128,7 @@ size = Vector2(34.5, 180)
 script = ExtResource("1_o5qli")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=264363825]
+unique_name_in_owner = true
 texture = ExtResource("2_0wfyh")
 centered = false
 
@@ -215,6 +217,12 @@ layout_mode = 0
 [node name="Konkey Dong" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="2" unique_id=1365692014 instance=ExtResource("9_choun")]
 visible = false
 layout_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=938379663]
+stream = ExtResource("11_ya4ey")
+volume_db = -18.04
+pitch_scale = 0.75
+autoplay = true
 
 [editable path="ArcadeButtonLeft"]
 [editable path="ArcadeButtonDown"]
