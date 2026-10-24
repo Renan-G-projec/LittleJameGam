@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cqfa6y6j0fpm7" path="res://scripts/meriu/meriu.gd" id="3_hije1"]
 [ext_resource type="Texture2D" uid="uid://cuism7qn3mgek" path="res://sprites/konkey dong/meriu-Sheet.png" id="4_s6w72"]
 [ext_resource type="PackedScene" uid="uid://d0w0mf5a6eooj" path="res://scenes/ladder.tscn" id="5_wsxj6"]
+[ext_resource type="Texture2D" uid="uid://br1eqt41hs444" path="res://sprites/konkey dong/monkey-Sheet.png" id="6_hije1"]
+[ext_resource type="Texture2D" uid="uid://5ty1njgdwg0q" path="res://sprites/konkey dong/barrel-Sheet.png" id="7_s6w72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtunw"]
 size = Vector2(109, 4)
@@ -139,3 +141,13 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundries" unique_id=1305636785]
 position = Vector2(136, 43)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="MonkeySheet" type="Sprite2D" parent="." unique_id=1999633888]
+position = Vector2(111, 14)
+texture = ExtResource("6_hije1")
+hframes = 5
+
+[node name="BarrelSheet" type="Sprite2D" parent="." unique_id=676944717]
+position = Vector2(49, 23)
+texture = ExtResource("7_s6w72")
+hframes = 4
