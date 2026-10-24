@@ -22,6 +22,8 @@ var _can_dash: bool = false
 
 var _facing_direction: int = 1
 
+var was_airbourne = false
+
 func _physics_process(delta: float) -> void:
 	_update_velocity(delta)
 	move_and_slide()
@@ -31,6 +33,12 @@ func _physics_process(delta: float) -> void:
 func _update_velocity(delta: float) -> void:
 	if !is_on_floor():
 		velocity += get_gravity() * delta
+		was_airbourne = true
+	else:
+		if was_airbourne:
+			was_airbourne = false
+			_feel_component.squash_animation(_sprite, Vector2(1.3, 0.8), 0.2)
+			
 	
 	if is_on_floor() && _jump_input_buffer:
 		_jump()
