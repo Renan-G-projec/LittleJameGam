@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://br1eqt41hs444" path="res://sprites/konkey dong/monkey-Sheet.png" id="6_hije1"]
 [ext_resource type="PackedScene" uid="uid://d0w0mf5a6eooj" path="res://scenes/konkey dong/ladder.tscn" id="6_rh7p1"]
 [ext_resource type="Texture2D" uid="uid://5ty1njgdwg0q" path="res://sprites/konkey dong/barrel-Sheet.png" id="7_s6w72"]
+[ext_resource type="AudioStream" uid="uid://c67wy5hf0bc7e" path="res://sfx/kongmusic.mp3" id="10_kl2gt"]
 [ext_resource type="Script" uid="uid://dpc6uc0ewsdr0" path="res://scripts/meriu/spawn_timer.gd" id="11_r8bje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtunw"]
@@ -165,5 +166,12 @@ position = Vector2(71, 21)
 
 [node name="SpawnTimer" type="Timer" parent="Spwaner" unique_id=408206386]
 script = ExtResource("11_r8bje")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=813398625]
+stream = ExtResource("10_kl2gt")
+volume_db = -13.222
+pitch_scale = 0.62
+autoplay = true
+attenuation = 1.6817931
 
 [connection signal="timeout" from="Spwaner/SpawnTimer" to="Spwaner/SpawnTimer" method="_on_timeout"]
