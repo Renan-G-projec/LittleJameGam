@@ -28,17 +28,18 @@ func go_to_scene(scene_file: String) -> void:
 		shader.set_shader_parameter("animation_progress", 0.0)
 	_in_transition = false
 	
-func create_transition() -> void:
+func create_transition(custom_transition_time: float = transition_time, custom_initial_progress: float = 0.2, delay: float = 0.0) -> void:
 	_in_transition = true
+	_progress = custom_initial_progress
 	
 	var tween: Tween = create_tween()
-	tween.tween_property(self, "_progress", 1.0, transition_time / 2)
+	tween.tween_property(self, "_progress", 1.0, custom_transition_time)
 	await tween.finished
 	
 	%ColorRect.rotation_degrees += 180
 	
 	tween = create_tween()
-	tween.tween_property(self, "_progress", 0.0, transition_time / 2)
+	tween.tween_property(self, "_progress", 0.0, custom_transition_time).set_delay(delay)
 	await tween.finished
 	
 	var shader: ShaderMaterial = %ColorRect.material as ShaderMaterial

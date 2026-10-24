@@ -29,7 +29,7 @@ func _ready():
 	_activate_current_minigame()
 
 func go_to_next_minigame() -> void:
-	TransitionManager.create_transition()
+	TransitionManager.create_transition(0.1, 0.2, 0.1)
 	
 	if _current_minigame == _minigames_list.size() - 1:
 		_finish_game()
