@@ -12,7 +12,13 @@ var ogGravity = gravity
 
 var last_barrel
 
+var is_dying = false
+
 @onready var raycast = $RayCast2D
+
+signal completed()
+signal earned_points(points: int)
+signal gameover()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -59,3 +65,25 @@ func _physics_process(delta: float) -> void:
 		isFacingRight = false
 
 	move_and_slide()
+
+func Won():
+	completed.emit()
+
+func Die():
+	if is_dying:
+		return
+	
+	is_dying = true
+	$Sprite2D.frame = 1
+	
+	var start_position = position
+	var up_position = start_position + Vector2(0, -30)
+	var down_position = start_position + Vector2(0, 80)
+	
+	while position.y > up_position.y:
+		velocity.y = -60
+		await get_tree().create_timer(0.01).timeout
+	while position.y < down_position.y:
+		position.y += 2
+		await get_tree().create_timer(0.01).timeout
+	gameover.emit()

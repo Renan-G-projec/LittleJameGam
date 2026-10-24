@@ -43,3 +43,8 @@ func fall_down():
 	direction = direction * -1
 	is_going_down = true
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "meriu":
+		body.Die()

@@ -35,7 +35,6 @@ func _on_score_right_body_entered(body: Node2D) -> void:
 	if score[0] >= POINTS_TO_WIN:
 		earned_points.emit(PONTUATION_BY_WIN)
 		completed.emit()
-		print("SFhkdjlfjalksdfj")
 
 
 func _on_ball_timer_timeout() -> void:

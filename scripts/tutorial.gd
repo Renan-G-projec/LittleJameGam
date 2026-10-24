@@ -9,9 +9,9 @@ var right = false
 
 signal completed()
 
-var texts = ["Try pressing that button over there, you can use the arrow keys or a controller", 
+var texts = ["Try pressing that big button over there, you can use the arrow keys or a controller", 
 "now let we see some moves, try pressing the arrows. did you know something happens when you press SHIFT/□ after jumping", 
-"You are on fire, press the action button again to start playing", ""]
+"You are on fire, press the big button again to start playing", ""]
 
 @onready var text = $Text
 # Called when the node enters the scene tree for the first time.
