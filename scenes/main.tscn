@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
-[ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey_dong.tscn" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="9_choun"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://stdq4s4nry23"]
+
+[ext_resource type="Script" uid="uid://bsf48fw32t1ks" path="res://scripts/meriu/barrel.gd" id="1_g4maa"]
+[ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="1_q36op"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptqd7"]
+radius = 3.0
+
+[node name="Barrel" type="RigidBody2D" unique_id=1534305740 groups=["Barrel"]]
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("1_g4maa")
+speed = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1185541600]
+texture = ExtResource("1_q36op")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1167975255]
+shape = SubResource("CircleShape2D_ptqd7")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1846575170]
+target_position = Vector2(-4, 4)
+collision_mask = 12
+collide_with_areas = true
+collide_with_bodies = false

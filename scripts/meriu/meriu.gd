@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 24.0
 const JUMP_VELOCITY = -50.0
 var gravity = 100
@@ -11,11 +10,20 @@ var canClimb = false
 
 var ogGravity = gravity
 
+var last_barrel
+
+@onready var raycast = $RayCast2D
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		$Sprite2D.frame = 1
+		if raycast.is_colliding():
+			var collider = raycast.get_collider()
+			if collider.is_in_group("Barrel") and collider != last_barrel:
+				print("dnada")
+				last_barrel = collider
 	else:
 		$Sprite2D.frame = 0
 	

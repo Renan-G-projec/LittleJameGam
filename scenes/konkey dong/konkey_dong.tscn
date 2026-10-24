@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c202n0hiyoydl" path="res://sprites/konkey dong/plataform.png" id="2_wsxj6"]
 [ext_resource type="Script" uid="uid://cqfa6y6j0fpm7" path="res://scripts/meriu/meriu.gd" id="3_hije1"]
 [ext_resource type="Texture2D" uid="uid://cuism7qn3mgek" path="res://sprites/konkey dong/meriu-Sheet.png" id="4_s6w72"]
-[ext_resource type="PackedScene" uid="uid://d0w0mf5a6eooj" path="res://scenes/ladder.tscn" id="5_wsxj6"]
 [ext_resource type="Texture2D" uid="uid://br1eqt41hs444" path="res://sprites/konkey dong/monkey-Sheet.png" id="6_hije1"]
+[ext_resource type="PackedScene" uid="uid://d0w0mf5a6eooj" path="res://scenes/konkey dong/ladder.tscn" id="6_rh7p1"]
 [ext_resource type="Texture2D" uid="uid://5ty1njgdwg0q" path="res://sprites/konkey dong/barrel-Sheet.png" id="7_s6w72"]
+[ext_resource type="Script" uid="uid://dpc6uc0ewsdr0" path="res://scripts/meriu/spawn_timer.gd" id="11_r8bje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtunw"]
 size = Vector2(109, 4)
@@ -126,11 +127,16 @@ shape = SubResource("CapsuleShape2D_r8bje")
 texture = ExtResource("4_s6w72")
 hframes = 2
 
-[node name="Ladder" parent="." unique_id=1313962710 instance=ExtResource("5_wsxj6")]
-position = Vector2(113, 58)
+[node name="RayCast2D" type="RayCast2D" parent="meriu" unique_id=1488231368]
+collision_mask = 12
 
-[node name="Ladder2" parent="." unique_id=1060638419 instance=ExtResource("5_wsxj6")]
-position = Vector2(30, 40)
+[node name="Ladder" parent="." unique_id=1313962710 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
+position = Vector2(113, 58)
+collision_layer = 8
+
+[node name="Ladder2" parent="." unique_id=1226903622 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
+position = Vector2(28, 40)
+collision_layer = 8
 
 [node name="Boundries" type="StaticBody2D" parent="." unique_id=2103149497]
 collision_layer = 12
@@ -153,3 +159,11 @@ hframes = 5
 position = Vector2(49, 23)
 texture = ExtResource("7_s6w72")
 hframes = 4
+
+[node name="Spwaner" type="Node2D" parent="." unique_id=598768323]
+position = Vector2(71, 21)
+
+[node name="SpawnTimer" type="Timer" parent="Spwaner" unique_id=408206386]
+script = ExtResource("11_r8bje")
+
+[connection signal="timeout" from="Spwaner/SpawnTimer" to="Spwaner/SpawnTimer" method="_on_timeout"]
