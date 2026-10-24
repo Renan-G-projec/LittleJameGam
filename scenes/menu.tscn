@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv4pi82xsqqji"]
 
 [ext_resource type="Script" uid="uid://e148cd4dwwmi" path="res://scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://dfqi2ln1p53xt" path="res://sprites/menu.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://dn1bbq35w1cek" path="res://sprites/menu.png" id="2_vjb58"]
 [ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="3_con2f"]
 [ext_resource type="AudioStream" uid="uid://bqwl8vpnsg3cl" path="res://sfx/click.wav" id="4_4ytvr"]
 [ext_resource type="AudioStream" uid="uid://duluklo8plc7h" path="res://sfx/menu_sound.mp3" id="5_4ytvr"]
@@ -22,6 +22,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 2560.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_vjb58")
@@ -31,17 +32,15 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -50.5
-offset_right = 153.0
-offset_bottom = 50.5
+offset_top = -45.0
+offset_right = 160.0
+offset_bottom = 45.0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_constants/margin_left = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1644034665]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=184630266]
 layout_mode = 2
-offset_transform_enabled = true
-alignment = 1
 
 [node name="PlayLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=673581649]
 layout_mode = 2

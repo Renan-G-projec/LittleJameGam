@@ -6,7 +6,7 @@ var _labels_original_text: Array[String] = []
 
 var _buttons_actions: Dictionary[int, Callable] = {
 	# PLAY
-	0: (func() -> void: TransitionManager.go_to_scene("res://scenes/main.tscn")),
+	0: _play_game_button,
 	
 	# SETTINGS
 	1: (func() -> void: print("Settings to add!")),
@@ -61,4 +61,15 @@ func _process(delta: float) -> void:
 		
 		await get_tree().create_timer(0.2).timeout
 		_buttons_actions[_current_selected_label].call()
+
+func _play_game_button() -> void:
+	var view_size: float = get_viewport_rect().size.x
+	var num_frames: int = $TextureRect.size.x / view_size
+	
+	TransitionManager.go_to_scene("res://scenes/main.tscn")
+	
+	for frame in range(num_frames):
+		$TextureRect.position.x -= view_size
 		
+		# Go a little earlier
+		await get_tree().create_timer(0.05).timeout
