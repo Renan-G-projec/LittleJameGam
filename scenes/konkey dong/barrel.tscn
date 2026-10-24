@@ -10,7 +10,6 @@ radius = 2.0
 radius = 3.0
 
 [node name="Barrel" type="RigidBody2D" unique_id=1534305740 groups=["Barrel"]]
-z_index = -2
 collision_layer = 4
 collision_mask = 12
 freeze_mode = 1

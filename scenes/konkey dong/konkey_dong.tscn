@@ -34,7 +34,7 @@ height = 10.0
 size = Vector2(20, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(21, 22)
+size = Vector2(17, 16)
 
 [node name="Konkey Dong" type="Control" unique_id=1365692014]
 layout_mode = 3
@@ -184,7 +184,7 @@ flip_h = true
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monkey" unique_id=1746805065]
-position = Vector2(-0.5, 1)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [connection signal="completed" from="meriu" to="." method="_on_meriu_completed"]
