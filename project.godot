@@ -22,7 +22,7 @@ driver/output_latency=10
 [autoload]
 
 TransitionManager="*uid://bjkb0u68ttt43"
-Global="*uid://di2fmhf0mfq2r"
+Global="*res://global.gd"
 
 [display]
 

@@ -22,6 +22,8 @@ var animation_time: float = 0.0
 
 var last_direction
 
+var haswon = false
+
 var direction
 
 signal completed()
@@ -80,10 +82,12 @@ func _physics_process(delta: float) -> void:
 	sway(delta)
 
 func Won():
+	earned_points.emit(20)
 	completed.emit()
+	haswon = true
 
 func Die():
-	if is_dying:
+	if is_dying or haswon:
 		return
 	
 	is_dying = true

@@ -137,7 +137,7 @@ centered = false
 
 [node name="Background2" type="Sprite2D" parent="." unique_id=537479377]
 unique_name_in_owner = true
-z_index = -2
+z_index = -4
 position = Vector2(82, 24)
 texture = ExtResource("3_trceg")
 centered = false
