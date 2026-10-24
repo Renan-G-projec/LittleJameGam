@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c202n0hiyoydl" path="res://sprites/konkey dong/plataform.png" id="2_wsxj6"]
 [ext_resource type="Script" uid="uid://cqfa6y6j0fpm7" path="res://scripts/meriu/meriu.gd" id="3_hije1"]
 [ext_resource type="Texture2D" uid="uid://cuism7qn3mgek" path="res://sprites/konkey dong/meriu-Sheet.png" id="4_s6w72"]
+[ext_resource type="PackedScene" uid="uid://d0w0mf5a6eooj" path="res://scenes/ladder.tscn" id="5_wsxj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtunw"]
 size = Vector2(109, 4)
@@ -24,6 +25,9 @@ size = Vector2(35, 7)
 radius = 4.0
 height = 10.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(20, 98)
+
 [node name="Konkey Dong" type="Control" unique_id=1365692014]
 layout_mode = 3
 anchors_preset = 0
@@ -31,7 +35,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="final plataform" type="StaticBody2D" parent="." unique_id=561195044]
-position = Vector2(70, 25)
+z_index = 1
+position = Vector2(70, 28)
 collision_layer = 8
 collision_mask = 4
 
@@ -44,7 +49,8 @@ one_way_collision = true
 texture = ExtResource("1_1oo2v")
 
 [node name="plataform2" type="StaticBody2D" parent="." unique_id=1270948987]
-position = Vector2(71, 45)
+z_index = 1
+position = Vector2(71, 46)
 scale = Vector2(-1, 1)
 collision_layer = 8
 collision_mask = 4
@@ -73,6 +79,7 @@ shape = SubResource("RectangleShape2D_gbytk")
 one_way_collision = true
 
 [node name="plataform1" type="StaticBody2D" parent="." unique_id=1407160204]
+z_index = 1
 position = Vector2(71, 70)
 collision_layer = 8
 collision_mask = 4
@@ -101,6 +108,7 @@ shape = SubResource("RectangleShape2D_gbytk")
 one_way_collision = true
 
 [node name="meriu" type="CharacterBody2D" parent="." unique_id=1022451830]
+z_index = 3
 position = Vector2(32, 56)
 collision_layer = 4
 collision_mask = 8
@@ -113,3 +121,21 @@ shape = SubResource("CapsuleShape2D_r8bje")
 [node name="Sprite2D" type="Sprite2D" parent="meriu" unique_id=1672591539]
 texture = ExtResource("4_s6w72")
 hframes = 2
+
+[node name="Ladder" parent="." unique_id=1313962710 instance=ExtResource("5_wsxj6")]
+position = Vector2(113, 58)
+
+[node name="Ladder2" parent="." unique_id=1060638419 instance=ExtResource("5_wsxj6")]
+position = Vector2(30, 40)
+
+[node name="Boundries" type="StaticBody2D" parent="." unique_id=2103149497]
+collision_layer = 12
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundries" unique_id=1841228704]
+position = Vector2(6, 44)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundries" unique_id=1305636785]
+position = Vector2(136, 43)
+shape = SubResource("RectangleShape2D_g4v7s")

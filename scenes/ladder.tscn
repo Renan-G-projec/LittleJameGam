@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d0w0mf5a6eooj"]
+
+[ext_resource type="Script" uid="uid://b12kifi8qiuk8" path="res://scripts/meriu/ladder.gd" id="1_xb1tl"]
+[ext_resource type="Texture2D" uid="uid://chuvhfmdoh3pm" path="res://sprites/konkey dong/ladder.png" id="2_ku54x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(8, 21)
+
+[node name="Ladder" type="Area2D" unique_id=1313962710]
+collision_layer = 12
+collision_mask = 12
+script = ExtResource("1_xb1tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=730643078]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872145069]
+texture = ExtResource("2_ku54x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1630645458]
+position = Vector2(0, -6)
+texture = ExtResource("2_ku54x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
