@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="1_q36op"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptqd7"]
-radius = 3.0
+radius = 2.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 4.0
+radius = 3.0
 
 [node name="Barrel" type="RigidBody2D" unique_id=1534305740 groups=["Barrel"]]
 collision_layer = 4
