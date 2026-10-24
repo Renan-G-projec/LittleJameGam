@@ -2,7 +2,6 @@
 ## AUTOLOAD: TransitionManager
 extends CanvasLayer
 
-
 var transition_time: float = 0.5
 var _in_transition: bool = false
 
@@ -22,6 +21,24 @@ func go_to_scene(scene_file: String) -> void:
 	
 	tween = create_tween()
 	tween.tween_property(self, "_progress", 0.0, transition_time)
+	await tween.finished
+	
+	var shader: ShaderMaterial = %ColorRect.material as ShaderMaterial
+	if shader:
+		shader.set_shader_parameter("animation_progress", 0.0)
+	_in_transition = false
+	
+func create_transition() -> void:
+	_in_transition = true
+	
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "_progress", 1.0, transition_time / 2)
+	await tween.finished
+	
+	%ColorRect.rotation_degrees += 180
+	
+	tween = create_tween()
+	tween.tween_property(self, "_progress", 0.0, transition_time / 2)
 	await tween.finished
 	
 	var shader: ShaderMaterial = %ColorRect.material as ShaderMaterial

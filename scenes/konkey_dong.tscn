@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyfc2boo0d7mi"]
 
 [ext_resource type="Texture2D" uid="uid://c17xsdqy8d7iq" path="res://sprites/konkey dong/finalplataform.png" id="1_1oo2v"]
+[ext_resource type="Script" uid="uid://xc7rldyfhddc" path="res://scripts/meriu/konkey_dong.gd" id="1_qtunw"]
 [ext_resource type="Texture2D" uid="uid://c202n0hiyoydl" path="res://sprites/konkey dong/plataform.png" id="2_wsxj6"]
 [ext_resource type="Script" uid="uid://cqfa6y6j0fpm7" path="res://scripts/meriu/meriu.gd" id="3_hije1"]
 [ext_resource type="Texture2D" uid="uid://cuism7qn3mgek" path="res://sprites/konkey dong/meriu-Sheet.png" id="4_s6w72"]
@@ -35,6 +36,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_qtunw")
 
 [node name="final plataform" type="StaticBody2D" parent="." unique_id=561195044]
 z_index = 1

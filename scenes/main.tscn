@@ -202,10 +202,10 @@ theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 7
 
 [node name="PONG" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="0" unique_id=739241883 instance=ExtResource("9_85g3d")]
-visible = false
 layout_mode = 0
 
 [node name="Konkey Dong" parent="Screen/MarginContainer/Screen" parent_id_path=PackedInt32Array(187329371, 726290361) index="1" unique_id=1365692014 instance=ExtResource("9_choun")]
+visible = false
 layout_mode = 0
 
 [editable path="ArcadeButtonLeft"]
