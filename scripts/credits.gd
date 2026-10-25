@@ -21,6 +21,7 @@ Vini", ""],["","Obrigado por jogar, aperte o botão de ação para continuar","[
 func _ready() -> void:
 	text.text = texts[Global.lang][text_count]
 	$Flags.hide()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	updateTextCount()
