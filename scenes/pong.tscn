@@ -30,7 +30,7 @@ offset_bottom = 40.0
 script = ExtResource("1_1gkem")
 
 [node name="Paddle" type="StaticBody2D" parent="." unique_id=973701088]
-position = Vector2(4, 13)
+position = Vector2(4, 39)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("2_7q0or")
@@ -43,7 +43,7 @@ shape = SubResource("RectangleShape2D_57qmd")
 texture = ExtResource("3_me32k")
 
 [node name="CPU" type="StaticBody2D" parent="." unique_id=702775707]
-position = Vector2(142, 13)
+position = Vector2(142, 39)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("4_jjrnv")
@@ -55,7 +55,7 @@ shape = SubResource("RectangleShape2D_57qmd")
 texture = ExtResource("3_me32k")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=328333635]
-position = Vector2(73, 38)
+position = Vector2(75, 40)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("5_osehs")
@@ -134,5 +134,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
+[connection signal="body_entered" from="ScoreLeft" to="Ball" method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]
+[connection signal="body_entered" from="ScoreRight" to="Ball" method="_on_score_right_body_entered"]
 [connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]
