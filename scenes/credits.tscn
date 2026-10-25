@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dainslf2dtwxq"]
+
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://fonts/PublicPixel-rv0pA.ttf" id="2_0ctdu"]
+
+[node name="Credits" type="Control" unique_id=1044668235]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=113526124]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 69.0
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "Code by
+KS Renan Danxo compiling.me
+
+Art by
+Renan & Danxo
+
+Musics by
+Vini"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

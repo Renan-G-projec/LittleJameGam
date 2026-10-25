@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://belhc3m2ypwpe" path="res://quiz.tscn" id="11_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="13_a8y0u"]
 [ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dainslf2dtwxq" path="res://scenes/credits.tscn" id="14_jbj1t"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tipki"]
 action = &"directional_left"
@@ -251,7 +252,11 @@ offset_right = 36.0
 visible = false
 layout_mode = 0
 
-[node name="Quiz" parent="Screen/MarginContainer/Screen" index="4" unique_id=606861725 instance=ExtResource("11_ya4ey")]
+[node name="Credits" parent="Screen/MarginContainer/Screen" index="4" unique_id=1044668235 instance=ExtResource("14_jbj1t")]
+visible = false
+layout_mode = 0
+
+[node name="Quiz" parent="Screen/MarginContainer/Screen" index="5" unique_id=606861725 instance=ExtResource("11_ya4ey")]
 visible = false
 layout_mode = 1
 offset_left = -5.0
