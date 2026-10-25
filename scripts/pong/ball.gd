@@ -22,9 +22,9 @@ func newBall():
 
 func random_direction():
 	var newDirection := Vector2()
-	newDirection.x = [1, -1].pick_random()
+	newDirection.x = last_score
 	newDirection.y = randf_range(-1, 1)
-	return newDirection.normalized() * last_score
+	return newDirection.normalized()
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(dir * speed * delta)
