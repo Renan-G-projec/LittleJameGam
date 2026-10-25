@@ -13,7 +13,7 @@ The game *AntCade* was created using the Godot engine. It was developed exclusiv
 
 Your dream is to become the greatest gamer in the world, but your friends and family keep telling you that you can't do it because you're JUST A LITTLE GUY. ***PROVE THEY ARE WRONG***
 
-# MiniGames
+# Mini Games
 
 ### Meriu
 <img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/701b918b-a9d5-4085-816b-d1db694da8f4" />
@@ -27,13 +27,17 @@ Your dream is to become the greatest gamer in the world, but your friends and fa
 ### Quiz
 <img width="1919" height="1024" alt="image" src="https://github.com/user-attachments/assets/9437887d-98db-427b-aa1a-7ab5036645be" />
 
+### Snake
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6c577472-fb51-4eb9-919b-7d093e489bd7" />
+
+
 # Built With
 
 - Engine: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg" width="16" height="16" alt="Godot" /> Godot
 - Language: GDScript
 - Platform: Web <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" width="16" height="16" alt="HTML5" /> HTML5
 
-# Creditos
+# Credits
 
 <img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/12d83e1a-c4ae-4d7e-a98f-4986e330ef8c" />
 
