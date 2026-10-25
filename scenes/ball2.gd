@@ -20,7 +20,7 @@ func newBall():
 func random_direction():
 	var newDirection := Vector2()
 	newDirection.x = [1, -1].pick_random()
-	newDirection.y = randf_range(-2, 2)
+	newDirection.y = randf_range(0, 2)
 	return newDirection.normalized()
 
 func _physics_process(delta: float) -> void:
@@ -32,6 +32,10 @@ func _physics_process(delta: float) -> void:
 			speed += accel
 			dir = dir.bounce(collision.get_normal())
 			sfx.play()
+		elif collider.is_in_group("Blocks"):
+			dir = dir.bounce(collision.get_normal())
+			sfx2.play()
+			collider.free()
 		else:
 			dir = dir.bounce(collision.get_normal())
 			sfx2.play()

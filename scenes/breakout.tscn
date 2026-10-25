@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://cb0nray648eyj" path="res://scenes/block.gd" id="9_pa37x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(6, 26)
+size = Vector2(6, 49.999985)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
 size = Vector2(20, 9.459301)
@@ -43,6 +43,11 @@ script = ExtResource("2_pa37x")
 shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Paddle" unique_id=2036640746]
+position = Vector2(5.2453663e-07, 12)
+texture = ExtResource("3_psvih")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Paddle" unique_id=1388102442]
+position = Vector2(-5.2453663e-07, -12)
 texture = ExtResource("3_psvih")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=328333635]
@@ -104,7 +109,7 @@ collision_mask = 4
 position = Vector2(-5, 10)
 shape = SubResource("RectangleShape2D_pa37x")
 
-[node name="Block" type="RigidBody2D" parent="." unique_id=1332555936]
+[node name="Block" type="RigidBody2D" parent="." unique_id=1332555936 groups=["Blocks"]]
 position = Vector2(68, 11)
 collision_layer = 4
 collision_mask = 12
@@ -119,7 +124,7 @@ offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
-[node name="Block2" type="RigidBody2D" parent="." unique_id=1901960147]
+[node name="Block2" type="RigidBody2D" parent="." unique_id=1901960147 groups=["Blocks"]]
 position = Vector2(35, 13)
 collision_layer = 4
 collision_mask = 12
@@ -134,7 +139,7 @@ offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
-[node name="Block3" type="RigidBody2D" parent="." unique_id=1685509400]
+[node name="Block3" type="RigidBody2D" parent="." unique_id=1685509400 groups=["Blocks"]]
 position = Vector2(103, 13)
 collision_layer = 4
 collision_mask = 12

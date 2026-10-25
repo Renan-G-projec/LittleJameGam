@@ -236,6 +236,7 @@ offset_right = 1.0
 offset_bottom = 0.0
 
 [node name="Breakout" parent="Screen/MarginContainer/Screen" index="1" unique_id=550716869 instance=ExtResource("10_jkv2x")]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_right = 41.0
