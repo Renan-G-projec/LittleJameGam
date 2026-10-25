@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://bjcaqs3uk0abp" path="res://scenes/breakout.tscn" id="10_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://niqgf16ydmbc" path="res://scenes/snake.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://belhc3m2ypwpe" path="res://quiz.tscn" id="11_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="13_a8y0u"]
 [ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="14_a8y0u"]
@@ -247,13 +248,19 @@ offset_right = 36.0
 visible = false
 layout_mode = 0
 
-[node name="Breakout" parent="Screen/MarginContainer/Screen" index="3" unique_id=550716869 instance=ExtResource("10_jkv2x")]
+[node name="Snake" parent="Screen/MarginContainer/Screen" index="3" unique_id=190291147 instance=ExtResource("10_muem4")]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_right = 45.0
+
+[node name="Breakout" parent="Screen/MarginContainer/Screen" index="4" unique_id=550716869 instance=ExtResource("10_jkv2x")]
 visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_right = 41.0
 
-[node name="Quiz" parent="Screen/MarginContainer/Screen" index="4" unique_id=606861725 instance=ExtResource("11_ya4ey")]
+[node name="Quiz" parent="Screen/MarginContainer/Screen" index="5" unique_id=606861725 instance=ExtResource("11_ya4ey")]
 visible = false
 layout_mode = 1
 offset_left = -5.0
@@ -261,7 +268,7 @@ offset_top = 1.0
 offset_right = -5.0
 offset_bottom = 1.0
 
-[node name="Credits" parent="Screen/MarginContainer/Screen" index="5" unique_id=1044668235 instance=ExtResource("14_jbj1t")]
+[node name="Credits" parent="Screen/MarginContainer/Screen" index="6" unique_id=1044668235 instance=ExtResource("14_jbj1t")]
 visible = false
 layout_mode = 0
 
