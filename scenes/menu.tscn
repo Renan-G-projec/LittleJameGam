@@ -75,7 +75,7 @@ layout_mode = 2
 offset_transform_enabled = true
 theme = ExtResource("3_con2f")
 bbcode_enabled = true
-text = "Exit"
+text = "Quit"
 fit_content = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=753410084]

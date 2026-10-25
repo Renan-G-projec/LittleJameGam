@@ -9,7 +9,7 @@ var _buttons_actions: Dictionary[int, Callable] = {
 	0: _play_game_button,
 	
 	# SETTINGS
-	1: (func() -> void: print("Settings to add!")),
+	1: _settings_button,
 	
 	# EXIT
 	2: (func() -> void: get_tree().quit())
@@ -67,6 +67,18 @@ func _play_game_button() -> void:
 	var num_frames: int = $Control/TextureRect.size.x / view_size
 	
 	TransitionManager.go_to_scene("res://scenes/main.tscn")
+	
+	for frame in range(num_frames):
+		$Control/TextureRect.position.x -= view_size
+		
+		# Go a little earlier
+		await get_tree().create_timer(0.05).timeout
+		
+func _settings_button() -> void:
+	var view_size: float = get_viewport_rect().size.x
+	var num_frames: int = $Control/TextureRect.size.x / view_size
+	
+	TransitionManager.go_to_scene("res://scenes/settings.tscn")
 	
 	for frame in range(num_frames):
 		$Control/TextureRect.position.x -= view_size

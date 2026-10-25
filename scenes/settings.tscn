@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://d23u6phtjkmtv"]
+
+[ext_resource type="Script" uid="uid://b838c057148ne" path="res://scripts/settings.gd" id="1_gis3k"]
+[ext_resource type="Texture2D" uid="uid://dn1bbq35w1cek" path="res://sprites/menu.png" id="2_83j8s"]
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="3_gjs24"]
+[ext_resource type="Texture2D" uid="uid://bi1xs8hl7nt5o" path="res://sprites/pong/paddle.png" id="4_83j8s"]
+[ext_resource type="AudioStream" uid="uid://bqwl8vpnsg3cl" path="res://sfx/click.wav" id="4_am25x"]
+[ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="5_gis3k"]
+[ext_resource type="AudioStream" uid="uid://dnurlgparawqa" path="res://sfx/press.wav" id="6_uhhto"]
+
+[node name="Menu" type="Control" unique_id=2114092794]
+custom_maximum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_gis3k")
+
+[node name="Control" type="Control" parent="." unique_id=473620655]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=66735998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2560.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_83j8s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=556660818]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.0
+offset_right = 200.0
+offset_bottom = 50.5
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=184630266]
+layout_mode = 2
+
+[node name="PlayLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=673581649]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_gjs24")
+bbcode_enabled = true
+text = "Fullscreen"
+fit_content = true
+scroll_active = false
+
+[node name="ExitLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2133856512]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_gjs24")
+bbcode_enabled = true
+text = "Exit"
+fit_content = true
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1102992249]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 101.0
+offset_right = 201.0
+offset_bottom = 127.0
+theme_override_icons/grabber = ExtResource("4_83j8s")
+theme_override_icons/grabber_highlight = ExtResource("4_83j8s")
+theme_override_icons/grabber_disabled = ExtResource("4_83j8s")
+theme_override_icons/tick = ExtResource("4_83j8s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=753410084]
+stream = ExtResource("4_am25x")
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=820081840]
+stream = ExtResource("5_gis3k")
+volume_db = -13.222
+pitch_scale = 0.62
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1232269006]
+stream = ExtResource("6_uhhto")
+volume_db = -13.222
+pitch_scale = 0.62
+autoplay = true
+attenuation = 1.7410986

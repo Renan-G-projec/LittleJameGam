@@ -230,23 +230,23 @@ theme_override_constants/margin_bottom = 7
 z_index = -1
 clip_contents = false
 
-[node name="Control" parent="Screen/MarginContainer/Screen" index="0" unique_id=1525755763 instance=ExtResource("8_choun")]
+[node name="Tutorial" parent="Screen/MarginContainer/Screen" index="0" unique_id=1525755763 instance=ExtResource("8_choun")]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 1.0
 offset_bottom = 0.0
 
-[node name="Breakout" parent="Screen/MarginContainer/Screen" index="1" unique_id=550716869 instance=ExtResource("10_jkv2x")]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_right = 41.0
-
-[node name="PONG" parent="Screen/MarginContainer/Screen" index="2" unique_id=739241883 instance=ExtResource("9_85g3d")]
+[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=739241883 instance=ExtResource("9_85g3d")]
 visible = false
 layout_mode = 0
 offset_left = -4.0
 offset_right = 36.0
+
+[node name="Breakout" parent="Screen/MarginContainer/Screen" index="2" unique_id=550716869 instance=ExtResource("10_jkv2x")]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
 
 [node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="3" unique_id=1365692014 instance=ExtResource("9_choun")]
 visible = false
