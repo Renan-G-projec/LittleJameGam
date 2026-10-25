@@ -2,8 +2,6 @@
 # Credits: https://medium.com/@tarapogancev/publish-godot-4-games-to-itch-io-with-github-actions-game-dev-ci-cd-9944106f6515?sk=f50e6843e838c538e7d18d5fb5a386f2
 name: "Export to web"
 on:
-  push:
-    branches: main
   workflow_dispatch: 
 
 env:
