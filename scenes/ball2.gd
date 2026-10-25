@@ -14,7 +14,7 @@ func _ready() -> void:
 	pass
 	
 func newBall():
-	position = Vector2(68,50)
+	position = $"../Paddle".position + 10*Vector2.UP
 	speed = startSpeed
 	active = false
 	dir = random_direction()
