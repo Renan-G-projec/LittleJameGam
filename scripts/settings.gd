@@ -3,7 +3,7 @@
 extends Control
 
 var _labels: Array[RichTextLabel] = []
-var _labels_original_text: Array[Array] = [["fullscreen","v","Hard mode: off","English","exit"],["tela cheia","v","Modo dificil: off","Portugues","Sair"]]
+var _labels_original_text: Array[Array] = [["fullscreen: off","v","Hard mode: off","English","exit"],["tela cheia: x","v","Modo dificil: X","Portugues","Sair"]]
 
 var is_fullscreen := false
 var _is_adjusting_volume := false
@@ -35,15 +35,16 @@ func _hardness():
 	Global.hard = !Global.hard
 	if Global.hard:
 		_labels_original_text[0][2] = "Hard MODE: On"
-		_labels_original_text[1][2] ="Modo dificil: on"
+		_labels_original_text[1][2] ="Modo dificil: O"
 	else:
-		_labels_original_text[0][2] = "Hard MODE: Off"
-		_labels_original_text[1][2] ="Modo dificil: off"
+		_labels_original_text[0][2] = "Hard MODE: X"
+		_labels_original_text[1][2] ="Modo dificil: desligado"
 	$MarginContainer/VBoxContainer/Hard.text = text_effect % _labels_original_text[Global.lang][2]
 
 func _lang():
 	Global.lang += 1
 	Global.lang %= 2
+	_update_lang()
 
 func _ready() -> void:
 	# Only collect RichTextLabels.
@@ -144,8 +145,12 @@ func _full_screen_button() -> void:
 	is_fullscreen = not is_fullscreen
 
 	if is_fullscreen:
+		_labels_original_text[0][0] = "Fullscreen: On"
+		_labels_original_text[1][0] = "Tela Cheia: O"
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
+		_labels_original_text[0][0] = "Fullscreen: Off"
+		_labels_original_text[1][0] = "Tela Cheia: X"
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 	_update_fullscreen_color()
@@ -167,7 +172,8 @@ func _go_back_button() -> void:
 func _update_fullscreen_color() -> void:
 	var color := "#00ff00" if is_fullscreen else "#ffffff"
 	var original_text = _labels_original_text[Global.lang][0]
-
+	
+	
 	if _current_selected_label == 0:
 		_fullscreen_label.text = (
 			"> [color=%s][wave freq=2 connected=0]%s[/wave][/color]"
@@ -186,3 +192,7 @@ func _on_volume_slider_value_changed(value: float) -> void:
 		AudioServer.set_bus_mute(0, true)
 	else:
 		AudioServer.set_bus_mute(0, false)
+		
+func _update_lang():
+	for i in range(_labels.size()):
+		_labels[i].text = _labels_original_text[Global.lang][i]
