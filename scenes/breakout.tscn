@@ -110,7 +110,7 @@ position = Vector2(-5, 10)
 shape = SubResource("RectangleShape2D_pa37x")
 
 [node name="Block" type="RigidBody2D" parent="." unique_id=1332555936 groups=["Blocks"]]
-position = Vector2(68, 11)
+position = Vector2(71, 11)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
@@ -124,8 +124,38 @@ offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
+[node name="Block4" type="RigidBody2D" parent="." unique_id=1131719662 groups=["Blocks"]]
+position = Vector2(12, 29)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4" unique_id=157228606]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block4" unique_id=738996593]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+
+[node name="Block5" type="RigidBody2D" parent="." unique_id=212140330 groups=["Blocks"]]
+position = Vector2(132, 29)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block5" unique_id=819304696]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block5" unique_id=507617516]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+
 [node name="Block2" type="RigidBody2D" parent="." unique_id=1901960147 groups=["Blocks"]]
-position = Vector2(35, 13)
+position = Vector2(39, 18)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
@@ -140,7 +170,7 @@ offset_right = 8.0
 offset_bottom = 4.0
 
 [node name="Block3" type="RigidBody2D" parent="." unique_id=1685509400 groups=["Blocks"]]
-position = Vector2(103, 13)
+position = Vector2(102, 19)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
@@ -158,6 +188,10 @@ offset_bottom = 4.0
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="Block" to="Block" method="_on_body_entered"]
 [connection signal="body_shape_entered" from="Block" to="Block" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block4" to="Block4" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block4" to="Block4" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block5" to="Block5" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block5" to="Block5" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Block2" to="Block2" method="_on_body_entered"]
 [connection signal="body_shape_entered" from="Block2" to="Block2" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Block3" to="Block3" method="_on_body_entered"]
