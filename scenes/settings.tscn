@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="5_gis3k"]
 [ext_resource type="AudioStream" uid="uid://dnurlgparawqa" path="res://sfx/press.wav" id="6_uhhto"]
 
-[node name="Menu" type="Control" unique_id=2114092794]
+[node name="Settings" type="Control" unique_id=2114092794]
 custom_maximum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 15
@@ -44,7 +44,7 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -61.0
-offset_right = 200.0
+offset_right = 191.0
 offset_bottom = 50.5
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -53,7 +53,7 @@ theme_override_constants/margin_left = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=184630266]
 layout_mode = 2
 
-[node name="PlayLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=673581649]
+[node name="FullScreenLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=673581649]
 layout_mode = 2
 offset_transform_enabled = true
 theme = ExtResource("3_gjs24")
@@ -62,6 +62,26 @@ text = "Fullscreen"
 fit_content = true
 scroll_active = false
 
+[node name="Volume" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=953279370]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_gjs24")
+bbcode_enabled = true
+text = "Fullscreen"
+fit_content = true
+scroll_active = false
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1102992249]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_83j8s")
+theme_override_icons/grabber_highlight = ExtResource("4_83j8s")
+theme_override_icons/grabber_disabled = ExtResource("4_83j8s")
+theme_override_icons/tick = ExtResource("4_83j8s")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
 [node name="ExitLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2133856512]
 layout_mode = 2
 offset_transform_enabled = true
@@ -69,17 +89,6 @@ theme = ExtResource("3_gjs24")
 bbcode_enabled = true
 text = "Exit"
 fit_content = true
-
-[node name="HSlider" type="HSlider" parent="." unique_id=1102992249]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 101.0
-offset_right = 201.0
-offset_bottom = 127.0
-theme_override_icons/grabber = ExtResource("4_83j8s")
-theme_override_icons/grabber_highlight = ExtResource("4_83j8s")
-theme_override_icons/grabber_disabled = ExtResource("4_83j8s")
-theme_override_icons/tick = ExtResource("4_83j8s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=753410084]
 stream = ExtResource("4_am25x")
@@ -97,3 +106,5 @@ volume_db = -13.222
 pitch_scale = 0.62
 autoplay = true
 attenuation = 1.7410986
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
