@@ -11,7 +11,7 @@ signal completed()
 
 var texts = [["Try pressing that big button over there, you can use the arrow keys or a controller", 
 "now let we see some moves, try pressing the arrows. did you know something happens when you press SHIFT after jumping", 
-"You are on fire, press the big button again to start playing", ""],["Tente apertar aquele botão grande ali, você pode usar as setas do teclado ou um controle","Agora vamos ver uns movimentos, tente apertar as setas. Você sabia que algo acontece quando você aperta SHIFT no ar?","Você está indo muito bem, aperte o botão grande de novo para começar a jogar",""]]
+"You are on fire, press the big button again to start playing", ""],["Tente apertar aquele botãozão ali, você pode usar as setas do teclado ou um controle","Agora mostra seu gingado, tente apertar essas setas. Você sabia que algo acontece quando tu aperta SHIFT no ar?","Tá mandando vê, aperte o botão grande de novo para começar a jogar",""]]
 
 @onready var text = $Text
 # Called when the node enters the scene tree for the first time.

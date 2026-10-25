@@ -2,7 +2,7 @@
 extends Control
 
 var _labels: Array[Node]
-var _labels_original_text: Array = [["Play","Settings","Quit"],["Jogar","Configs","Quitar"]]
+var _labels_original_text: Array = [["Play","Settings","Quit"],["Jogar","Configs","Sair"]]
 
 var _buttons_actions: Dictionary[int, Callable] = {
 	# PLAY
