@@ -90,6 +90,14 @@ bbcode_enabled = true
 text = "Exit"
 fit_content = true
 
+[node name="ExitLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2017732949]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_gjs24")
+bbcode_enabled = true
+text = "Exit"
+fit_content = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=753410084]
 stream = ExtResource("4_am25x")
 autoplay = true

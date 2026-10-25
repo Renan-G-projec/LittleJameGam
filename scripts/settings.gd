@@ -45,15 +45,6 @@ func _ready() -> void:
 		DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	)
 
-	# Initialize the slider from the current audio bus volume.
-	var bus_index := AudioServer.get_bus_index(audio_bus_name)
-	if bus_index != -1:
-		_volume_slider.value = db_to_linear(
-			AudioServer.get_bus_volume_db(bus_index)
-		)
-
-	_volume_slider.value_changed.connect(_on_volume_slider_value_changed)
-
 	_activate_current_label()
 
 
@@ -113,15 +104,9 @@ func _process(_delta: float) -> void:
 
 	if _current_selected_label == VOLUME_INDEX:
 		if Input.is_action_just_pressed("ui_left"):
-			_volume_slider.value = maxf(
-				_volume_slider.min_value,
-				_volume_slider.value - 0.05
-			)
+			_volume_slider.value -= 0.05
 		elif Input.is_action_just_pressed("ui_right"):
-			_volume_slider.value = minf(
-				_volume_slider.max_value,
-				_volume_slider.value + 0.05
-			)
+			_volume_slider.value += 0.05
 
 	if Input.is_action_just_pressed("ui_accept"):
 		$AudioStreamPlayer.play()
@@ -153,10 +138,6 @@ func _full_screen_button() -> void:
 	_update_fullscreen_color()
 
 
-func _sound() -> void:
-	pass
-
-
 func _go_back_button() -> void:
 	var view_size: float = get_viewport_rect().size.x
 	var num_frames: int = int(
@@ -183,16 +164,12 @@ func _update_fullscreen_color() -> void:
 		_fullscreen_label.text = "[color=%s]%s[/color]" % [
 			color, original_text
 		]
-
-
+		
 func _on_volume_slider_value_changed(value: float) -> void:
-	var bus_index := AudioServer.get_bus_index(audio_bus_name)
-
-	if bus_index == -1:
-		return
-
-	if value <= 0.0:
-		AudioServer.set_bus_mute(bus_index, true)
+	var bus_index = AudioServer.get_bus_index(audio_bus_name)
+	
+	AudioServer.set_bus_volume_db(0, db_to_linear(value))
+	if value == 0:
+		AudioServer.set_bus_mute(0, true)
 	else:
-		AudioServer.set_bus_mute(bus_index, false)
-		AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+		AudioServer.set_bus_mute(0, false)
