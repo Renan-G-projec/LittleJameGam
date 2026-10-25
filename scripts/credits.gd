@@ -6,13 +6,13 @@ var end = false
 signal completed()
 
 var texts = ["","Thank you for playing, press the action button to continue", 
-"Code by
+"[wave amp=2 freq=8 connected=0][color=lime]Code by[/color][/wave]
 KS Renan Danxo compiling.me
 
-Art by
+[wave amp=2 freq=8 connected=0][color=#89CFF0]Art by[/color][/wave]
 Renan & Danxo
 
-Musics by
+[wave amp=2 freq=8 connected=0][color=violet]Music by[/color][/wave]
 Vini", ""]
 
 @onready var text = $Text
