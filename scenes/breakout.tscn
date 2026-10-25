@@ -109,23 +109,38 @@ collision_mask = 4
 position = Vector2(-5, 10)
 shape = SubResource("RectangleShape2D_pa37x")
 
-[node name="Block" type="RigidBody2D" parent="." unique_id=1332555936 groups=["Blocks"]]
-position = Vector2(71, 11)
+[node name="Block1" type="RigidBody2D" parent="." unique_id=1332555936 groups=["Blocks"]]
+position = Vector2(68, 11)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block" unique_id=14386763]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1" unique_id=14386763]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block" unique_id=1437155218]
+[node name="ColorRect" type="ColorRect" parent="Block1" unique_id=1437155218]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+
+[node name="Block5" type="RigidBody2D" parent="." unique_id=314100555 groups=["Blocks"]]
+position = Vector2(68, 29)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block5" unique_id=1650869826]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block5" unique_id=1847108087]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
 [node name="Block4" type="RigidBody2D" parent="." unique_id=1131719662 groups=["Blocks"]]
-position = Vector2(12, 29)
+position = Vector2(9, 29)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
@@ -139,23 +154,55 @@ offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
-[node name="Block5" type="RigidBody2D" parent="." unique_id=212140330 groups=["Blocks"]]
-position = Vector2(132, 29)
+[node name="Block0" type="RigidBody2D" parent="." unique_id=212140330 groups=["Blocks"]]
+position = Vector2(129, 29)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block5" unique_id=819304696]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block0" unique_id=819304696]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block5" unique_id=507617516]
+[node name="ColorRect" type="ColorRect" parent="Block0" unique_id=507617516]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
+[node name="Block6" type="RigidBody2D" parent="." unique_id=638504518 groups=["Blocks"]]
+position = Vector2(9, 11)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block6" unique_id=1499595571]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block6" unique_id=1288380507]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block7" type="RigidBody2D" parent="." unique_id=1205026480 groups=["Blocks"]]
+position = Vector2(129, 11)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block7" unique_id=2145018541]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block7" unique_id=1160168083]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Block2" type="RigidBody2D" parent="." unique_id=1901960147 groups=["Blocks"]]
-position = Vector2(39, 18)
+position = Vector2(39, 20)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
@@ -170,7 +217,7 @@ offset_right = 8.0
 offset_bottom = 4.0
 
 [node name="Block3" type="RigidBody2D" parent="." unique_id=1685509400 groups=["Blocks"]]
-position = Vector2(102, 19)
+position = Vector2(99, 20)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
@@ -184,15 +231,55 @@ offset_top = -4.0
 offset_right = 8.0
 offset_bottom = 4.0
 
+[node name="Block8" type="RigidBody2D" parent="." unique_id=667203873 groups=["Blocks"]]
+position = Vector2(39, 38)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block8" unique_id=844851893]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block8" unique_id=307882119]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+
+[node name="Block9" type="RigidBody2D" parent="." unique_id=1079685667 groups=["Blocks"]]
+position = Vector2(99, 38)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block9" unique_id=1332855366]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block9" unique_id=926795533]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+
 [connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
-[connection signal="body_entered" from="Block" to="Block" method="_on_body_entered"]
-[connection signal="body_shape_entered" from="Block" to="Block" method="_on_body_shape_entered"]
-[connection signal="body_entered" from="Block4" to="Block4" method="_on_body_entered"]
-[connection signal="body_shape_entered" from="Block4" to="Block4" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block1" to="Block1" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block1" to="Block1" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Block5" to="Block5" method="_on_body_entered"]
 [connection signal="body_shape_entered" from="Block5" to="Block5" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block4" to="Block4" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block4" to="Block4" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block0" to="Block0" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block0" to="Block0" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block6" to="Block6" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block6" to="Block6" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block7" to="Block7" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block7" to="Block7" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Block2" to="Block2" method="_on_body_entered"]
 [connection signal="body_shape_entered" from="Block2" to="Block2" method="_on_body_shape_entered"]
 [connection signal="body_entered" from="Block3" to="Block3" method="_on_body_entered"]
 [connection signal="body_shape_entered" from="Block3" to="Block3" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block8" to="Block8" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block8" to="Block8" method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Block9" to="Block9" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Block9" to="Block9" method="_on_body_shape_entered"]

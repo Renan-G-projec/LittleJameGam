@@ -2,7 +2,7 @@
 extends Control
 
 var _labels: Array[Node]
-var _labels_original_text: Array[String] = []
+var _labels_original_text: Array = [["Play","Settings","Quit"],["Jogar","Configs","Quitar"]]
 
 var _buttons_actions: Dictionary[int, Callable] = {
 	# PLAY
@@ -24,13 +24,11 @@ var _current_selected_label: int:
 
 func _ready() -> void:
 	_labels = $MarginContainer/VBoxContainer.get_children()
-	for label in _labels:
-		_labels_original_text.push_back(label.text)
 	_current_selected_label = 0
 
 func _activate_current_label() -> void:
 	for label in range(0, _labels.size()):
-		_labels[label].text = _labels_original_text[label]
+		_labels[label].text = _labels_original_text[Global.lang][label]
 	_labels[_current_selected_label].text = text_effect % _labels[_current_selected_label].text
 
 func _process(delta: float) -> void:

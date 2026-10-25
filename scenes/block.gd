@@ -8,6 +8,8 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = INF
 	po = position
+	if !Global.hard and int(str(self.name)[5]) in range(5,10):
+		queue_free()
 	pass # Replace with function body.
 
 

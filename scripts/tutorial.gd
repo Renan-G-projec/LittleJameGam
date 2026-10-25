@@ -9,14 +9,14 @@ var right = false
 var end = false
 signal completed()
 
-var texts = ["Try pressing that big button over there, you can use the arrow keys or a controller", 
-"now let we see some moves, try pressing the arrows. did you know something happens when you press SHIFT/□ after jumping", 
-"You are on fire, press the big button again to start playing", ""]
+var texts = [["Try pressing that big button over there, you can use the arrow keys or a controller", 
+"now let we see some moves, try pressing the arrows. did you know something happens when you press SHIFT after jumping", 
+"You are on fire, press the big button again to start playing", ""],["Tente apertar aquele botão grande ali, você pode usar as setas do teclado ou um controle","Agora vamos ver uns movimentos, tente apertar as setas. Você sabia que algo acontece quando você aperta SHIFT no ar?","Você está indo muito bem, aperte o botão grande de novo para começar a jogar",""]]
 
 @onready var text = $Text
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text.text = texts[text_count]
+	text.text = texts[Global.lang][text_count]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 			text_count += 1
 	if text_count == 2 and Input.is_action_just_pressed("main_action"):
 		text_count += 1
-	text.text = texts[text_count]
+	text.text = texts[Global.lang][text_count]
 	
 	if text_count >= 3 and not end:
 		Global.tutorial_completed = true
