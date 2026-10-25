@@ -1,16 +1,21 @@
 extends Control
-var q:=[["1. 2+2?","1","2","3","4",4],["2. This is a question.","True","False","What?","Maybe",2],["3. If you are in HackClub, what are you?","Teenager","Smart","Silly","All of the above",4],["  1) This is a question","WRONG","RIght","^",">",2],["  1) This is a question","WRONG","RIght","^",">",2],["  ","1","2","3","4",5]]
+var q:=[[". 2+2?","1","2","3","4",4],[". This is a question.","True","False","What?","Maybe",2],[". If you are in HackClub, what are you?","Teenager","Smart","Silly","All of the above",4],[". If a³-1 = 0, |a| = ?","1","-1","0","i",1],[". What is the name of this game?","AntGames","LilGames","AntCade","LilCade",3],[". What is a Blåhaj?","Hammerhead","Blue","Lemon","Mako",2],[". If you're happy and you know it...","Clap Clap!","Hug!","Boop!","All of the above",4],[". [3*9-3*3]%3?","0","18","1","WTH",1],[". Where is Tarsila do Amaral from?","USA","France","Brazil","Portugal",3],["How do you center a div?","margin: auto;","text-align: center;","display: flex; justify-content: center; align-items: center;","Is it possible?",4],[". Press ¬Up","Left","Down","Up","Right",2]]
 var p:= 0
+var l:= 1
+var m:=[]
+signal completed()
+signal gameover()
 var score1 := 0
 var score2 := 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	p = 0
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$RichTextLabel.text = "[wave amp=8.0 freq=2.0 connected=0]" + q[p][0]
+	$RichTextLabel.text = "[wave amp=8.0 freq=2.0 connected=0]" +str(l)+ q[p][0]
 	$l/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][1]
 	$d/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][2]
 	$u/tex.text = "[wave amp=8.0 freq=2.0 connected=0]" +q[p][3]
@@ -23,5 +28,14 @@ func _process(delta: float) -> void:
 		else:
 			score2 += 1
 			Global.ans = 0
-		p+=1
+		m.append(p)
+		if l == 10:
+			if score1<7:
+				gameover.emit()
+			else:
+				completed.emit()
+
+		while p in m:
+			p = randi_range(0,len(q)-1)
+		l+=1
 	pass

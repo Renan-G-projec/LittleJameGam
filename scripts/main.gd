@@ -1,14 +1,12 @@
 # Ad Maiorem Dei Gloriam!
 extends CanvasLayer
 var s := false
-
+signal completed()
 @export var _current_minigame: int = 0:
 	set(new_minigame):
 		new_minigame = clamp(new_minigame, 0, _minigames_list.size() - 1)
 		
 		if _current_minigame == new_minigame: return
-		
-		_deactivate_current_minigame()
 		_current_minigame = new_minigame
 		_activate_current_minigame()
 
@@ -47,6 +45,7 @@ func go_to_next_minigame() -> void:
 
 func _on_minigame_completed() -> void:
 	_screenshake(4)
+	_deactivate_current_minigame()
 	if _current_minigame == 0:
 		go_to_next_minigame()
 	else:
@@ -59,6 +58,7 @@ func _on_minigame_completed() -> void:
 func _on_minigame_gameover() -> void:
 	_screenshake(10)
 	s = true
+	_deactivate_current_minigame()
 	$GameOver.color = Color(0.212, 0.0, 0.0, 0.847)
 	$GameOver/tex.text = "[wave amp=8.0 freq=2.0 connected=0][b]Game Over[/b]
 Press the action button to proceed"
@@ -113,3 +113,5 @@ func _process(delta: float) -> void:
 			offset = Vector2.ZERO
 	if s and Input.is_action_just_pressed("main_action"):
 			go_to_next_minigame()
+	if Input.is_action_just_pressed("p"):
+		completed.emit()
