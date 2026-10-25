@@ -3,7 +3,7 @@
 extends Control
 
 var _labels: Array[RichTextLabel] = []
-var _labels_original_text: Array[String] = []
+var _labels_original_text: Array[Array] = [["fullscreen","v","Hard mode: off","English","exit"],["tela cheia","v","Modo dificil: off","Portugues","Sair"]]
 
 var is_fullscreen := false
 var _is_adjusting_volume := false
@@ -18,7 +18,9 @@ const VOLUME_INDEX := 1
 
 var _buttons_actions: Dictionary[int, Callable] = {
 	0: _full_screen_button,
-	2: _go_back_button
+	4: _go_back_button,
+	3: _lang,
+	2: _hardness,
 }
 
 var _current_selected_label: int = 0:
@@ -29,6 +31,19 @@ var _current_selected_label: int = 0:
 		_current_selected_label = clampi(new_label, 0, _labels.size() - 1)
 		_activate_current_label()
 
+func _hardness():
+	Global.hard = !Global.hard
+	if Global.hard:
+		_labels_original_text[0][2] = "Hard MODE: On"
+		_labels_original_text[1][2] ="Modo dificil: on"
+	else:
+		_labels_original_text[0][2] = "Hard MODE: Off"
+		_labels_original_text[1][2] ="Modo dificil: off"
+	$MarginContainer/VBoxContainer/Hard.text = text_effect % _labels_original_text[Global.lang][2]
+
+func _lang():
+	Global.lang += 1
+	Global.lang %= 2
 
 func _ready() -> void:
 	# Only collect RichTextLabels.
@@ -38,8 +53,6 @@ func _ready() -> void:
 		if child is RichTextLabel:
 			_labels.append(child)
 
-	for label in _labels:
-		_labels_original_text.append(label.text)
 
 	is_fullscreen = (
 		DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
@@ -50,11 +63,11 @@ func _ready() -> void:
 
 func _activate_current_label() -> void:
 	for i in range(_labels.size()):
-		_labels[i].text = _labels_original_text[i]
+		_labels[i].text = _labels_original_text[Global.lang][i]
 
 	# Highlight the selected label.
 	_labels[_current_selected_label].text = (
-		text_effect % _labels_original_text[_current_selected_label]
+		text_effect % _labels_original_text[Global.lang][_current_selected_label]
 	)
 
 	# Update fullscreen color and volume selection.
@@ -153,7 +166,7 @@ func _go_back_button() -> void:
 
 func _update_fullscreen_color() -> void:
 	var color := "#00ff00" if is_fullscreen else "#ffffff"
-	var original_text := _labels_original_text[0]
+	var original_text = _labels_original_text[Global.lang][0]
 
 	if _current_selected_label == 0:
 		_fullscreen_label.text = (
