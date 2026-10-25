@@ -37,8 +37,8 @@ func _hardness():
 		_labels_original_text[0][2] = "Hard MODE: On"
 		_labels_original_text[1][2] ="Modo dificil: O"
 	else:
-		_labels_original_text[0][2] = "Hard MODE: X"
-		_labels_original_text[1][2] ="Modo dificil: desligado"
+		_labels_original_text[0][2] = "Hard MODE: Off"
+		_labels_original_text[1][2] ="Modo dificil: X"
 	$MarginContainer/VBoxContainer/Hard.text = text_effect % _labels_original_text[Global.lang][2]
 
 func _lang():
