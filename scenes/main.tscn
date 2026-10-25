@@ -237,29 +237,29 @@ offset_left = 1.0
 offset_right = 1.0
 offset_bottom = 0.0
 
-[node name="Quiz" parent="Screen/MarginContainer/Screen" index="1" unique_id=606861725 instance=ExtResource("11_ya4ey")]
+[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=739241883 instance=ExtResource("9_85g3d")]
+visible = false
+layout_mode = 0
+offset_left = -4.0
+offset_right = 36.0
+
+[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="2" unique_id=1365692014 instance=ExtResource("9_choun")]
+visible = false
+layout_mode = 0
+
+[node name="Breakout" parent="Screen/MarginContainer/Screen" index="3" unique_id=550716869 instance=ExtResource("10_jkv2x")]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
+
+[node name="Quiz" parent="Screen/MarginContainer/Screen" index="4" unique_id=606861725 instance=ExtResource("11_ya4ey")]
 visible = false
 layout_mode = 1
 offset_left = -5.0
 offset_top = 1.0
 offset_right = -5.0
 offset_bottom = 1.0
-
-[node name="PONG" parent="Screen/MarginContainer/Screen" index="2" unique_id=739241883 instance=ExtResource("9_85g3d")]
-visible = false
-layout_mode = 0
-offset_left = -4.0
-offset_right = 36.0
-
-[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="3" unique_id=1365692014 instance=ExtResource("9_choun")]
-visible = false
-layout_mode = 0
-
-[node name="Breakout" parent="Screen/MarginContainer/Screen" index="4" unique_id=550716869 instance=ExtResource("10_jkv2x")]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_right = 41.0
 
 [node name="Credits" parent="Screen/MarginContainer/Screen" index="5" unique_id=1044668235 instance=ExtResource("14_jbj1t")]
 visible = false
