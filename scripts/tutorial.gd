@@ -21,6 +21,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if end:
+		return
 	if text_count == 0 and Input.is_action_just_pressed("main_action"):
 		text_count += 1
 	if text_count == 1:
@@ -38,7 +40,7 @@ func _process(delta: float) -> void:
 		text_count += 1
 	text.text = texts[Global.lang][text_count]
 	
-	if text_count >= 3 and not end:
+	if text_count >= 3:
 		Global.tutorial_completed = true
 		completed.emit()
 		end = true
