@@ -1,5 +1,5 @@
 extends Control
-var q:=[["  1) This is a question","WRONG","RIght","^",">",2],["  1) This is a question","WRONG","RIght","^",">",2],["  1) This is a question","WRONG","RIght","^",">",2],["  1) This is a question","WRONG","RIght","^",">",2],["  1) This is a question","WRONG","RIght","^",">",2],["  ","1","2","3","4",5]]
+var q:=[["1. 2+2?","1","2","3","4",4],["2. This is a question.","True","False","What?","Maybe",2],["3. If you are in HackClub, what are you?","Teenager","Smart","Silly","All of the above",4],["  1) This is a question","WRONG","RIght","^",">",2],["  1) This is a question","WRONG","RIght","^",">",2],["  ","1","2","3","4",5]]
 var p:= 0
 var score1 := 0
 var score2 := 0

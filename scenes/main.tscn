@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://deqmmneen2hcc" path="res://scenes/tutorial.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://bjcaqs3uk0abp" path="res://scenes/breakout.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://belhc3m2ypwpe" path="res://quiz.tscn" id="11_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="13_a8y0u"]
 [ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="14_a8y0u"]
@@ -144,7 +145,7 @@ centered = false
 
 [node name="Background3" type="Sprite2D" parent="." unique_id=1678867441]
 unique_name_in_owner = true
-modulate = Color(0.43, 0.43, 0.43, 0.40392157)
+modulate = Color(0.27, 0.27, 0.27, 0.3254902)
 z_index = 2
 position = Vector2(82, 24)
 texture = ExtResource("3_trceg")
@@ -234,17 +235,22 @@ offset_left = 1.0
 offset_right = 1.0
 offset_bottom = 0.0
 
-[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=739241883 instance=ExtResource("9_85g3d")]
+[node name="Breakout" parent="Screen/MarginContainer/Screen" index="1" unique_id=550716869 instance=ExtResource("10_jkv2x")]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
+
+[node name="PONG" parent="Screen/MarginContainer/Screen" index="2" unique_id=739241883 instance=ExtResource("9_85g3d")]
 visible = false
 layout_mode = 0
 offset_left = -4.0
 offset_right = 36.0
 
-[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="2" unique_id=1365692014 instance=ExtResource("9_choun")]
+[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="3" unique_id=1365692014 instance=ExtResource("9_choun")]
 visible = false
 layout_mode = 0
 
-[node name="Quiz" parent="Screen/MarginContainer/Screen" index="3" unique_id=606861725 instance=ExtResource("11_ya4ey")]
+[node name="Quiz" parent="Screen/MarginContainer/Screen" index="4" unique_id=606861725 instance=ExtResource("11_ya4ey")]
 visible = false
 layout_mode = 1
 offset_left = -5.0

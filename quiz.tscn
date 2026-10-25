@@ -17,11 +17,12 @@ script = ExtResource("1_rmnlm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1066870950]
 layout_mode = 0
-offset_right = 322.0
+offset_right = 310.0
 offset_bottom = 40.0
 theme = ExtResource("1_i0i4q")
 bbcode_enabled = true
-text = " 1) this is a question!"
+text = "6? ?"
+horizontal_alignment = 1
 justification_flags = 0
 
 [node name="l" type="Sprite2D" parent="." unique_id=1389911057]
