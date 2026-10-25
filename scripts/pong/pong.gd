@@ -3,7 +3,7 @@ class_name Pong
 extends Control
 
 var score := [0, 0] # 0: Player, 1: CPU
-const POINTS_TO_WIN := 3
+var POINTS_TO_WIN := 3
 const PONTUATION_BY_WIN := 20
 const PONTUATION_BY_GOAL := 3
 
@@ -13,6 +13,11 @@ signal gameover()
 
 
 ## Point to cpu
+
+func _ready() -> void:
+	if Global.hard:
+		POINTS_TO_WIN = 5
+
 func _on_score_left_body_entered(body: Node2D) -> void:
 	if !(body is Ball): return
 	score[1] += 1
