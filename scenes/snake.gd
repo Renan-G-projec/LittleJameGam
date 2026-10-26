@@ -7,12 +7,12 @@ var head := Vector2i(3,4)
 var fruit := Vector2i(12,4)
 var snek := [Vector2i(3,4)]
 var t := 0.0
-var p := 0.4
+var p := 0.8
 var Next := Vector2i.RIGHT
 
 func _ready():
 	if Global.hard:
-		p = 0.2
+		p = 0.6
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("directional_down"):
@@ -45,10 +45,10 @@ func _process(delta: float) -> void:
 			snek.append(head)
 
 	if Global.hard:
-		if len(snek) > 25:
+		if len(snek) > 30:
 			completed.emit()
 	else:
-		if len(snek) > 15:
+		if len(snek) > 20:
 			completed.emit()
 	t+=delta
 	for i in range(17):

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://niqgf16ydmbc"]
 
-[ext_resource type="Script" path="res://scenes/snake.gd" id="1_a5f6l"]
+[ext_resource type="Script" uid="uid://dctm01cm4e6i" path="res://scenes/snake.gd" id="1_a5f6l"]
 [ext_resource type="Texture2D" uid="uid://bkbpj6mwpxrhq" path="res://sprites/flag.png" id="2_yc36x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_auphx"]
