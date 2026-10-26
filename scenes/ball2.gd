@@ -31,14 +31,15 @@ func _physics_process(delta: float) -> void:
 		var collider
 		if collision:
 			collider = collision.get_collider()
-			if collider == $"../Paddle" or collider == $"../CPU":
+			if collider == $"../Paddle":
 				speed += accel
 				dir = dir.bounce(collision.get_normal())
 				sfx.play()
 			elif collider.is_in_group("Blocks"):
+				print("AAAAAA")
 				dir = dir.bounce(collision.get_normal())
 				sfx2.play()
-				collider.free()
+				collider.queue_free()
 			else:
 				dir = dir.bounce(collision.get_normal())
 				sfx2.play()

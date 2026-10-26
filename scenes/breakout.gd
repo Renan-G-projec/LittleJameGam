@@ -23,7 +23,7 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 		gameover.emit()
 		has_lose = true
 	print(body)
-	$BallTimer.start(1)
+	$BallTimer.start(0.1)
 	
 
 func _process(delta: float) -> void:
