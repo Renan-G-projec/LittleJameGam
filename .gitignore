@@ -1,3 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+addons/godot_super-wakatime/utils.gd.uid
+addons/godot_super-wakatime/utils.gd
+addons/godot_super-wakatime/README.md
+addons/godot_super-wakatime/plugin.cfg
+addons/godot_super-wakatime/LICENSE
+addons/godot_super-wakatime/godot_super-wakatime.gd.uid
+addons/godot_super-wakatime/godot_super-wakatime.gd
+addons/godot_super-wakatime/counter.tscn
+addons/godot_super-wakatime/api_key_prompt.tscn
