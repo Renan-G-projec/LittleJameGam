@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://d073sq5m3ww55" path="res://scenes/ball2.gd" id="4_pa37x"]
 [ext_resource type="Texture2D" uid="uid://8pqj0vfydly" path="res://sprites/pong/ball.png" id="6_cwyr8"]
 [ext_resource type="AudioStream" uid="uid://bbmcnikphwtk6" path="res://sfx/raquet_sound.wav" id="7_560so"]
-[ext_resource type="Texture2D" uid="uid://dt8djhpnpwx4e" path="res://sprites/main/backgroundsc.png" id="8_4nnm8"]
 [ext_resource type="AudioStream" uid="uid://cdpdbo0h4nvif" path="res://sfx/wall_bounce.wav" id="8_7au3l"]
 [ext_resource type="Script" uid="uid://cb0nray648eyj" path="res://scenes/block.gd" id="9_pa37x"]
 
@@ -92,15 +91,7 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="Background3" type="Sprite2D" parent="." unique_id=1032694950]
-unique_name_in_owner = true
-modulate = Color(0.27, 0.27, 0.27, 0.3254902)
-z_index = 2
-position = Vector2(-10, -2)
-texture = ExtResource("8_4nnm8")
-centered = false
-
-[node name="ScoreLeft" type="Area2D" parent="." unique_id=1127068257 groups=["Blocks"]]
+[node name="ScoreLeft" type="Area2D" parent="." unique_id=1127068257]
 position = Vector2(70, 86)
 collision_layer = 8
 collision_mask = 4
@@ -114,10 +105,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block01" unique_id=14386763 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block01" unique_id=14386763]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block01" unique_id=1437155218 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block01" unique_id=1437155218]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -130,26 +121,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block05" unique_id=1650869826 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block05" unique_id=1650869826]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block05" unique_id=1847108087 groups=["Blocks"]]
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Block04" type="StaticBody2D" parent="." unique_id=446202618 groups=["Blocks"]]
-position = Vector2(9, 23)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("9_pa37x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block04" unique_id=157228606 groups=["Blocks"]]
-shape = SubResource("RectangleShape2D_4cwjc")
-
-[node name="ColorRect" type="ColorRect" parent="Block04" unique_id=738996593 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block05" unique_id=1847108087]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -162,10 +137,26 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block00" unique_id=819304696 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block00" unique_id=819304696]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block00" unique_id=507617516 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block00" unique_id=507617516]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block04" type="StaticBody2D" parent="." unique_id=446202618 groups=["Blocks"]]
+position = Vector2(9, 23)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block04" unique_id=157228606]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block04" unique_id=738996593]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -178,10 +169,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block06" unique_id=1499595571 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block06" unique_id=1499595571]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block06" unique_id=1288380507 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block06" unique_id=1288380507]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -194,10 +185,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block07" unique_id=2145018541 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block07" unique_id=2145018541]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block07" unique_id=1160168083 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block07" unique_id=1160168083]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -210,10 +201,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block02" unique_id=1391928810 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block02" unique_id=1391928810]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block02" unique_id=62292299 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block02" unique_id=62292299]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -226,10 +217,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block03" unique_id=255843580 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block03" unique_id=255843580]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block03" unique_id=1620235150 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block03" unique_id=1620235150]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -242,90 +233,10 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block08" unique_id=844851893 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block08" unique_id=844851893]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block08" unique_id=307882119 groups=["Blocks"]]
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Block09" type="StaticBody2D" parent="." unique_id=938717296 groups=["Blocks"]]
-position = Vector2(99, 32)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("9_pa37x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block09" unique_id=1332855366 groups=["Blocks"]]
-shape = SubResource("RectangleShape2D_4cwjc")
-
-[node name="ColorRect" type="ColorRect" parent="Block09" unique_id=926795533 groups=["Blocks"]]
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Block10" type="StaticBody2D" parent="." unique_id=1146964688 groups=["Blocks"]]
-position = Vector2(68, 39)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("9_pa37x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block10" unique_id=1760755190 groups=["Blocks"]]
-shape = SubResource("RectangleShape2D_4cwjc")
-
-[node name="ColorRect" type="ColorRect" parent="Block10" unique_id=1812037001 groups=["Blocks"]]
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Block11" type="StaticBody2D" parent="." unique_id=1387448541 groups=["Blocks"]]
-position = Vector2(9, 39)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("9_pa37x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block11" unique_id=190884353 groups=["Blocks"]]
-shape = SubResource("RectangleShape2D_4cwjc")
-
-[node name="ColorRect" type="ColorRect" parent="Block11" unique_id=2144225775 groups=["Blocks"]]
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Block12" type="StaticBody2D" parent="." unique_id=1723416250 groups=["Blocks"]]
-position = Vector2(129, 39)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("9_pa37x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block12" unique_id=1174999164 groups=["Blocks"]]
-shape = SubResource("RectangleShape2D_4cwjc")
-
-[node name="ColorRect" type="ColorRect" parent="Block12" unique_id=774007126 groups=["Blocks"]]
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Block13" type="StaticBody2D" parent="." unique_id=988968837 groups=["Blocks"]]
-position = Vector2(39, 48)
-collision_layer = 4
-collision_mask = 12
-script = ExtResource("9_pa37x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block13" unique_id=1330143514 groups=["Blocks"]]
-shape = SubResource("RectangleShape2D_4cwjc")
-
-[node name="ColorRect" type="ColorRect" parent="Block13" unique_id=1163361345 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block08" unique_id=307882119]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0
@@ -338,10 +249,90 @@ collision_layer = 4
 collision_mask = 12
 script = ExtResource("9_pa37x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block14" unique_id=344644672 groups=["Blocks"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block14" unique_id=344644672]
 shape = SubResource("RectangleShape2D_4cwjc")
 
-[node name="ColorRect" type="ColorRect" parent="Block14" unique_id=988884512 groups=["Blocks"]]
+[node name="ColorRect" type="ColorRect" parent="Block14" unique_id=988884512]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block09" type="StaticBody2D" parent="." unique_id=938717296 groups=["Blocks"]]
+position = Vector2(99, 32)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block09" unique_id=1332855366]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block09" unique_id=926795533]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block10" type="StaticBody2D" parent="." unique_id=1146964688 groups=["Blocks"]]
+position = Vector2(68, 39)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block10" unique_id=1760755190]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block10" unique_id=1812037001]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block11" type="StaticBody2D" parent="." unique_id=1387448541 groups=["Blocks"]]
+position = Vector2(9, 39)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block11" unique_id=190884353]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block11" unique_id=2144225775]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block12" type="StaticBody2D" parent="." unique_id=1723416250 groups=["Blocks"]]
+position = Vector2(129, 39)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block12" unique_id=1174999164]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block12" unique_id=774007126]
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Block13" type="StaticBody2D" parent="." unique_id=988968837 groups=["Blocks"]]
+position = Vector2(39, 48)
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("9_pa37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block13" unique_id=1330143514]
+shape = SubResource("RectangleShape2D_4cwjc")
+
+[node name="ColorRect" type="ColorRect" parent="Block13" unique_id=1163361345]
 offset_left = -8.0
 offset_top = -4.0
 offset_right = 8.0

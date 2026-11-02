@@ -251,8 +251,8 @@ layout_mode = 0
 [node name="Snake" parent="Screen/MarginContainer/Screen" index="3" unique_id=190291147 instance=ExtResource("10_muem4")]
 visible = false
 layout_mode = 0
-offset_left = 5.0
-offset_right = 45.0
+offset_left = 2.0
+offset_right = 42.0
 
 [node name="Breakout" parent="Screen/MarginContainer/Screen" index="4" unique_id=550716869 instance=ExtResource("10_jkv2x")]
 visible = false

@@ -1,5 +1,5 @@
 extends StaticBody2D
-
+var step = 20.0
 var ball_pos : Vector2
 var dist : int
 var move_by : int
@@ -14,7 +14,10 @@ func _process(delta: float) -> void:
 	var ball = $"../Ball"
 
 	var dist = ball.global_position.y - global_position.y
-	var step = 30.0 * delta
+	if Global.hard:
+		step = 30.0 * delta
+	else:
+		step = 15.0 * delta
 
 	if abs(dist) > step:
 		global_position.y += sign(dist) * step

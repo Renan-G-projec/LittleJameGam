@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 24.0
-const JUMP_VELOCITY = -50.0
+const JUMP_VELOCITY = -40.0
 var gravity = 100
 
 var isFacingRight = true
@@ -30,7 +30,23 @@ signal completed()
 signal earned_points(points: int)
 signal gameover()
 
+
+func _ready():
+	Global.scr[1] = 0
+
+
+func _process(delta: float) -> void:
+	if position.y < 21.0:
+		Global.scr[1] = 2
+	elif position.y < 39.0:
+		Global.scr[1] = 1
+	else:
+		Global.scr[1] = 0
+
+
 func _physics_process(delta: float) -> void:
+	if is_dying:
+		canClimb = false
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -67,7 +83,6 @@ func _physics_process(delta: float) -> void:
 		
 	if not is_on_floor() and !canClimb:
 			velocity.x = SPEED * _sprite.scale.x
-		
 	
 	
 	if direction > 0 and !isFacingRight:
@@ -87,6 +102,9 @@ func Won():
 	haswon = true
 
 func Die():
+	canClimb = false
+	collision_layer = 0
+	collision_mask = 0
 	if is_dying or haswon:
 		return
 	

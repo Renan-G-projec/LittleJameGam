@@ -18,7 +18,6 @@ func _ready() -> void:
 	if Global.hard:
 		POINTS_TO_WIN = 5
 	Global.scr[5] = POINTS_TO_WIN
-
 func _on_score_left_body_entered(body: Node2D) -> void:
 	if !(body is Ball): return
 	score[1] += 1

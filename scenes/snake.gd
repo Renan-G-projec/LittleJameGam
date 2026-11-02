@@ -11,7 +11,7 @@ var p := 0.8
 var Next := Vector2i.RIGHT
 
 func _ready():
-	Global.scr[7] = 20
+	Global.scr[7] = 15
 	if Global.hard:
 		p = 0.6
 		Global.scr[7] = 30
@@ -48,11 +48,11 @@ func _process(delta: float) -> void:
 			snek.append(head)
 
 	if Global.hard:
-		if len(snek) > 30:
+		if len(snek) == 30:
 			completed.emit()
 			Global.scr[2] = len(snek)
 	else:
-		if len(snek) > 20:
+		if len(snek) == 15:
 			completed.emit()
 			Global.scr[2] = len(snek)
 	t+=delta

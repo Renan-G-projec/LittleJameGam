@@ -79,11 +79,11 @@ collision_layer = 8
 collision_mask = 12
 
 [node name="top" type="CollisionShape2D" parent="borders" unique_id=901748837]
-position = Vector2(2, -47.9375)
+position = Vector2(2, -42.9375)
 shape = SubResource("RectangleShape2D_3gngh")
 
 [node name="bottom" type="CollisionShape2D" parent="borders" unique_id=1374526147]
-position = Vector2(2, 46.875)
+position = Vector2(2, 41.875)
 shape = SubResource("RectangleShape2D_3gngh")
 
 [node name="ScoreLeft" type="Area2D" parent="." unique_id=1430355031]

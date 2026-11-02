@@ -34,7 +34,7 @@ height = 10.0
 size = Vector2(20, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(17, 16)
+size = Vector2(20, 13)
 
 [node name="Konkey Dong" type="Control" unique_id=1365692014]
 layout_mode = 3
@@ -118,7 +118,7 @@ one_way_collision = true
 
 [node name="meriu" type="CharacterBody2D" parent="." unique_id=1022451830]
 z_index = -2
-position = Vector2(29, 62)
+position = Vector2(21, 57)
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("3_hije1")
@@ -137,6 +137,18 @@ collision_mask = 12
 
 [node name="Ladder" parent="." unique_id=1313962710 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
 position = Vector2(113, 58)
+collision_layer = 8
+
+[node name="Ladder3" parent="." unique_id=931616609 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
+visible = false
+position = Vector2(104, 46)
+scale = Vector2(0.16000003, 0.1200006)
+collision_layer = 8
+
+[node name="Ladder4" parent="." unique_id=1621889189 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
+visible = false
+position = Vector2(37.000008, 28.000002)
+scale = Vector2(0.16000003, 0.1200006)
 collision_layer = 8
 
 [node name="Ladder2" parent="." unique_id=1226903622 groups=["Ladders"] instance=ExtResource("6_rh7p1")]
@@ -184,7 +196,7 @@ flip_h = true
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monkey" unique_id=1746805065]
-position = Vector2(-0.5, -1)
+position = Vector2(-2, -2.5)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [connection signal="completed" from="meriu" to="." method="_on_meriu_completed"]

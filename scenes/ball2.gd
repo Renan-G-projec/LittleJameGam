@@ -34,6 +34,8 @@ func _physics_process(delta: float) -> void:
 			if collider == $"../Paddle":
 				speed += accel
 				dir = dir.bounce(collision.get_normal())
+				dir = dir + Vector2(0.0,randf_range(0,0.1))
+				dir *= randf_range(1,1.05)
 				sfx.play()
 			elif collider.is_in_group("Blocks"):
 				print("AAAAAA")

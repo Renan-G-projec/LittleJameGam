@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://6td7e6mrl536" path="res://scenes/sprite_2d_0.gd" id="7_7lgdl"]
 [ext_resource type="Texture2D" uid="uid://dl2r2nm7ldujy" path="res://sprites/bk.png" id="7_ih6pn"]
 [ext_resource type="Texture2D" uid="uid://cn4bj5dw0aygl" path="res://sprites/sne.png" id="8_7lgdl"]
+[ext_resource type="Texture2D" uid="uid://7llolgfcf347" path="res://sprites/qui.png" id="9_c6kru"]
+[ext_resource type="Texture2D" uid="uid://u4tpnn7gghur" path="res://sprites/me.png" id="10_qbfqv"]
 
 [node name="Credits" type="Control" unique_id=1044668235]
 layout_mode = 3
@@ -99,7 +101,7 @@ metadata/_edit_use_anchors_ = true
 [node name="2" type="Sprite2D" parent="level" unique_id=580800622]
 position = Vector2(11.999998, 41)
 rotation = -0.0038197935
-texture = ExtResource("7_ih6pn")
+texture = ExtResource("8_7lgdl")
 region_rect = Rect2(0, 36, 53, 36)
 script = ExtResource("7_7lgdl")
 
@@ -123,7 +125,7 @@ metadata/_edit_use_anchors_ = true
 [node name="4" type="Sprite2D" parent="level" unique_id=128183730]
 position = Vector2(47, 61)
 rotation = -0.0038197935
-texture = ExtResource("8_7lgdl")
+texture = ExtResource("9_c6kru")
 region_rect = Rect2(0, 36, 53, 36)
 script = ExtResource("7_7lgdl")
 
@@ -147,7 +149,7 @@ metadata/_edit_use_anchors_ = true
 [node name="1" type="Sprite2D" parent="level" unique_id=325114871]
 position = Vector2(81.999985, 20.999996)
 rotation = -0.0038197935
-texture = ExtResource("6_ooihk")
+texture = ExtResource("10_qbfqv")
 region_rect = Rect2(0, 36, 53, 36)
 script = ExtResource("7_7lgdl")
 
