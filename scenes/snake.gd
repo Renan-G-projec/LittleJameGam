@@ -11,8 +11,10 @@ var p := 0.8
 var Next := Vector2i.RIGHT
 
 func _ready():
+	Global.scr[7] = 20
 	if Global.hard:
 		p = 0.6
+		Global.scr[7] = 30
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("directional_down"):
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 				print(snek)
 			else:
 				gameover.emit()
+				Global.scr[2] = len(snek)
 		else:
 			head += Next
 			fruit = Vector2i(randi_range(0,16),randi_range(0,8))
@@ -47,9 +50,11 @@ func _process(delta: float) -> void:
 	if Global.hard:
 		if len(snek) > 30:
 			completed.emit()
+			Global.scr[2] = len(snek)
 	else:
 		if len(snek) > 20:
 			completed.emit()
+			Global.scr[2] = len(snek)
 	t+=delta
 	for i in range(17):
 		for j in range(9):

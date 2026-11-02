@@ -17,6 +17,7 @@ signal gameover()
 func _ready() -> void:
 	if Global.hard:
 		POINTS_TO_WIN = 5
+	Global.scr[5] = POINTS_TO_WIN
 
 func _on_score_left_body_entered(body: Node2D) -> void:
 	if !(body is Ball): return
@@ -26,6 +27,7 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 	$CPUScore.text = str(score[1])
 	
 	if score[1] >= POINTS_TO_WIN:
+		Global.scr[0] = score[0]
 		gameover.emit()
 	
 
@@ -39,6 +41,7 @@ func _on_score_right_body_entered(body: Node2D) -> void:
 	
 	if score[0] >= POINTS_TO_WIN:
 		earned_points.emit(PONTUATION_BY_WIN)
+		Global.scr[0] = score[0]
 		completed.emit()
 
 

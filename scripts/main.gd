@@ -51,8 +51,7 @@ func _on_minigame_completed() -> void:
 	else:
 		s = true
 		$GameOver.color = Color(0.0, 0.121, 0.05, 0.847)
-		$GameOver/tex.text = "[wave amp=8.0 freq=2.0 connected=0][b]You Win![/b]
-	Press the action button to proceed"
+		$GameOver/tex.text = ["[wave amp=8.0 freq=2.0 connected=0][b]You Win![/b] \n Press the action button to proceed","[wave amp=8.0 freq=2.0 connected=0][b]Parabens![/b] \n Aperte o botao grande para proceder"][Global.lang]
 		$GameOver.visible = true
 
 func _on_minigame_gameover() -> void:
@@ -60,8 +59,7 @@ func _on_minigame_gameover() -> void:
 	s = true
 	_deactivate_current_minigame()
 	$GameOver.color = Color(0.212, 0.0, 0.0, 0.847)
-	$GameOver/tex.text = "[wave amp=8.0 freq=2.0 connected=0][b]Game Over[/b]
-Press the action button to proceed"
+	$GameOver/tex.text = ["[wave amp=8.0 freq=2.0 connected=0][b]Game Over[/b] \n Press the action button to proceed","[wave amp=8.0 freq=2.0 connected=0][b]Perdeu![/b] \n Aperte o botao grande para proceder"][Global.lang]
 	$GameOver.visible = true
 
 func _on_minigame_earned_points(points: int) -> void:

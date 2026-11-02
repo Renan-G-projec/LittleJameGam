@@ -5,6 +5,10 @@
 [ext_resource type="FontFile" uid="uid://282tc7brn0mm" path="res://fonts/PublicPixel-rv0pA.ttf" id="2_0ctdu"]
 [ext_resource type="Texture2D" uid="uid://d0lv7w11r3km6" path="res://sprites/flag2.png" id="4_8gwij"]
 [ext_resource type="Script" uid="uid://tgw2l45s6y63" path="res://scenes/sprite_2d_1.gd" id="5_mah5v"]
+[ext_resource type="Texture2D" uid="uid://j56y165l0drq" path="res://sprites/pon.png" id="6_ooihk"]
+[ext_resource type="Script" uid="uid://6td7e6mrl536" path="res://scenes/sprite_2d_0.gd" id="7_7lgdl"]
+[ext_resource type="Texture2D" uid="uid://dl2r2nm7ldujy" path="res://sprites/bk.png" id="7_ih6pn"]
+[ext_resource type="Texture2D" uid="uid://cn4bj5dw0aygl" path="res://sprites/sne.png" id="8_7lgdl"]
 
 [node name="Credits" type="Control" unique_id=1044668235]
 layout_mode = 3
@@ -22,21 +26,22 @@ theme = ExtResource("1_2ckv8")
 theme_override_fonts/normal_font = ExtResource("2_0ctdu")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "Code by
-KS | Renan | Danxo
-compiling.me
+text = "Score:
 
-Art by
-Renan & Danxo
 
-Musics by
-Vini"
+
+
+
+
+
+"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Flags" type="Node2D" parent="." unique_id=1728013154]
+visible = false
 
 [node name="Sprite2D0" type="Sprite2D" parent="Flags" unique_id=1842208600]
 position = Vector2(120, 67.00001)
@@ -64,3 +69,125 @@ texture = ExtResource("4_8gwij")
 region_enabled = true
 region_rect = Rect2(0, 0, 53, 36)
 script = ExtResource("5_mah5v")
+
+[node name="level" type="Node2D" parent="." unique_id=2068661418]
+
+[node name="0" type="Sprite2D" parent="level" unique_id=906892448]
+position = Vector2(12, 21)
+rotation = -0.0038197935
+texture = ExtResource("6_ooihk")
+region_rect = Rect2(0, 36, 53, 36)
+script = ExtResource("7_7lgdl")
+
+[node name="Text" type="RichTextLabel" parent="level/0" unique_id=859817604]
+offset_left = 9.015214
+offset_top = -3.9655921
+offset_right = 53.777992
+offset_bottom = 4.0344076
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "25/25"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Sprite2D" parent="level" unique_id=580800622]
+position = Vector2(11.999998, 41)
+rotation = -0.0038197935
+texture = ExtResource("7_ih6pn")
+region_rect = Rect2(0, 36, 53, 36)
+script = ExtResource("7_7lgdl")
+
+[node name="Text" type="RichTextLabel" parent="level/2" unique_id=164715079]
+offset_left = 9.015214
+offset_top = -3.9655921
+offset_right = 53.777992
+offset_bottom = 4.0344076
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "25/25"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Sprite2D" parent="level" unique_id=128183730]
+position = Vector2(47, 61)
+rotation = -0.0038197935
+texture = ExtResource("8_7lgdl")
+region_rect = Rect2(0, 36, 53, 36)
+script = ExtResource("7_7lgdl")
+
+[node name="Text" type="RichTextLabel" parent="level/4" unique_id=1088154745]
+offset_left = 9.015214
+offset_top = -3.9655921
+offset_right = 53.777992
+offset_bottom = 4.0344076
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "25/25"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Sprite2D" parent="level" unique_id=325114871]
+position = Vector2(81.999985, 20.999996)
+rotation = -0.0038197935
+texture = ExtResource("6_ooihk")
+region_rect = Rect2(0, 36, 53, 36)
+script = ExtResource("7_7lgdl")
+
+[node name="Text" type="RichTextLabel" parent="level/1" unique_id=615634132]
+offset_left = 9.015214
+offset_top = -3.9655921
+offset_right = 53.777992
+offset_bottom = 4.0344076
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "25/25"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Sprite2D" parent="level" unique_id=376314724]
+position = Vector2(81.99999, 40.999996)
+rotation = -0.0038197935
+texture = ExtResource("7_ih6pn")
+region_rect = Rect2(0, 36, 53, 36)
+script = ExtResource("7_7lgdl")
+
+[node name="Text" type="RichTextLabel" parent="level/3" unique_id=1124252665]
+offset_left = 9.015214
+offset_top = -3.9655921
+offset_right = 53.777992
+offset_bottom = 4.0344076
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "25/25"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

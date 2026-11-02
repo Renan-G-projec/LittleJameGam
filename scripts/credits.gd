@@ -5,7 +5,7 @@ var text_count = 0
 var end = false
 signal completed()
 
-var texts = [["","Thank you for playing, press the action button to continue", 
+var texts = [["","Scores:\n\n\n\n\n\n\n\n\n","Thank you for playing, press the action button to continue", 
 "[wave amp=2 freq=8 connected=0][color=lime]Code by[/color][/wave]
 KS Renan Danxo compiling.me
 
@@ -13,7 +13,7 @@ KS Renan Danxo compiling.me
 Renan & Danxo
 
 [wave amp=2 freq=8 connected=0][color=violet]Music by[/color][/wave]
-Vini", ""],["","Obrigado por jogar, aperte o botão de ação para continuar","[wave amp=2 freq=8 connected=0][color=lime]Código por[/color][/wave]\nKS Renan Danxo compiling.me\n\n[wave amp=2 freq=8 connected=0][color=#89CFF0]Arte por[/color][/wave]\nRenan & Danxo\n\n[wave amp=2 freq=8 connected=0][color=violet]Música por[/color][/wave]\nVini",""
+Vini", ""],["","Pontuação:\n\n\n\n\n\n\n\n\n","Obrigado por jogar, aperte o botão de ação para continuar","[wave amp=2 freq=8 connected=0][color=lime]Código por[/color][/wave]\nKS Renan Danxo compiling.me\n\n[wave amp=2 freq=8 connected=0][color=#89CFF0]Arte por[/color][/wave]\nRenan & Danxo\n\n[wave amp=2 freq=8 connected=0][color=violet]Música por[/color][/wave]\nVini",""
 ]]
 
 @onready var text = $Text
@@ -26,7 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	updateTextCount()
 	
-	if text_count == 3 and not end:
+	if text_count == 4 and not end:
 		end = true
 		TransitionManager.go_to_scene("res://scenes/menu.tscn")
 
@@ -35,5 +35,7 @@ func updateTextCount():
 		text_count += 1
 		text.text = texts[Global.lang][text_count]
 		await 1
-	if text_count == 2:
+	if text_count == 3:
 		$Flags.show()
+	if text_count == 1:
+		$level.show()

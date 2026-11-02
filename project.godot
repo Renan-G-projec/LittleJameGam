@@ -118,6 +118,10 @@ p={
 "deadzone": 0.2,
 "events": []
 }
+directional_up={
+"deadzone": 0.2,
+"events": []
+}
 
 [layer_names]
 

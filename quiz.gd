@@ -31,12 +31,16 @@ func _process(delta: float) -> void:
 		m.append(p)
 		if Global.hard:
 			if l == 15:
+				Global.scr[4] = score1
+				Global.scr[9] = 15
 				if score1<14:
 					gameover.emit()
 				else:
 					completed.emit()
 		else:
 			if l == 10:
+				Global.scr[4] = score1
+				Global.scr[9] = 10
 				if score1<7:
 					gameover.emit()
 				else:
