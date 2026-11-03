@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 		else:
 			if l == 10:
 				Global.scr[4] = score1
-				Global.scr[9] = 10
+				Global.scr[9+int(Global.sup)] = 10
 				if score1<7:
 					gameover.emit()
 				else:

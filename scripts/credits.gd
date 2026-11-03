@@ -41,6 +41,10 @@ func updateTextCount():
 		$level.show()
 		if b:
 			b=false
-			$Text.text += "%2.2f "%(float(Global.scr[0])/float(Global.scr[5])+(Global.scr[1])/float(Global.scr[6])+(Global.scr[2])/float(Global.scr[7])+(Global.scr[3])/float(Global.scr[8])+(Global.scr[4])/float(Global.scr[9])*20.0)+"% \n\n\n\n\n\n\n\n\n"
+			if Global.sup:
+				$Text.text += "%2.2f "%((float(Global.scr[0])/float(Global.scr[6])+(Global.scr[1])/float(Global.scr[7])+(Global.scr[2])/float(Global.scr[8])+(Global.scr[3])/float(Global.scr[9])+(Global.scr[4])/float(Global.scr[10])+(Global.scr[5])/float(Global.scr[11]))*50.0/3.0)+"% \n\n\n\n\n\n\n\n\n"
+			else:
+				$Text.text += "%2.2f "%((float(Global.scr[0])/float(Global.scr[5])+(Global.scr[1])/float(Global.scr[6])+(Global.scr[2])/float(Global.scr[7])+(Global.scr[3])/float(Global.scr[8])+(Global.scr[4])/float(Global.scr[9]))*20.0)+"% \n\n\n\n\n\n\n\n\n"
+			
 	else:
 		$level.visible = 0

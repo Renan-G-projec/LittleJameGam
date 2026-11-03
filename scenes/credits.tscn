@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4bj5dw0aygl" path="res://sprites/sne.png" id="8_7lgdl"]
 [ext_resource type="Texture2D" uid="uid://7llolgfcf347" path="res://sprites/qui.png" id="9_c6kru"]
 [ext_resource type="Texture2D" uid="uid://u4tpnn7gghur" path="res://sprites/me.png" id="10_qbfqv"]
+[ext_resource type="Texture2D" uid="uid://gknjn5dvf8hc" path="res://sprites/main/ant.png" id="10_x5q3x"]
 
 [node name="Credits" type="Control" unique_id=1044668235]
 layout_mode = 3
@@ -123,13 +124,37 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Sprite2D" parent="level" unique_id=128183730]
-position = Vector2(47, 61)
+position = Vector2(12.000001, 62)
 rotation = -0.0038197935
 texture = ExtResource("9_c6kru")
 region_rect = Rect2(0, 36, 53, 36)
 script = ExtResource("7_7lgdl")
 
 [node name="Text" type="RichTextLabel" parent="level/4" unique_id=1088154745]
+offset_left = 9.015214
+offset_top = -3.9655921
+offset_right = 53.777992
+offset_bottom = 4.0344076
+offset_transform_enabled = true
+theme = ExtResource("1_2ckv8")
+theme_override_fonts/normal_font = ExtResource("2_0ctdu")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "25/25"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Sprite2D" parent="level" unique_id=1304008794]
+position = Vector2(82, 62)
+rotation = -0.0038197935
+texture = ExtResource("10_x5q3x")
+region_rect = Rect2(0, 36, 53, 36)
+script = ExtResource("7_7lgdl")
+
+[node name="Text" type="RichTextLabel" parent="level/5" unique_id=603990671]
 offset_left = 9.015214
 offset_top = -3.9655921
 offset_right = 53.777992

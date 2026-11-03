@@ -1,6 +1,7 @@
 # Ad Maiorem Dei Gloriam!
 extends CanvasLayer
 var s := false
+var k:= false
 signal completed()
 @export var _current_minigame: int = 0:
 	set(new_minigame):
@@ -56,6 +57,7 @@ func _on_minigame_completed() -> void:
 
 func _on_minigame_gameover() -> void:
 	_screenshake(10)
+	k = true
 	s = true
 	_deactivate_current_minigame()
 	$GameOver.color = Color(0.212, 0.0, 0.0, 0.847)
@@ -110,6 +112,10 @@ func _process(delta: float) -> void:
 			_screenshake_active = false
 			offset = Vector2.ZERO
 	if s and Input.is_action_just_pressed("main_action"):
+		if Global.sup and k:
+			TransitionManager.go_to_scene("res://scenes/menu.tscn")
+			Global.sup = false
+		else:
 			go_to_next_minigame()
 	if Input.is_action_just_pressed("p"):
 		completed.emit()

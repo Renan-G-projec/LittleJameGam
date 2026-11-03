@@ -8,5 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Text.text = str(Global.scr[int(self.name)])+"/"+str(Global.scr[int(self.name)+5])
+	if int(self.name) == 5:
+		if Global.sup:
+			$Text.text = str(Global.scr[int(self.name)])+"/"+str(Global.scr[int(self.name)+5++int(Global.sup)])
+		else:
+			$Text.text = "??????"
+	else:
+		$Text.text = str(Global.scr[int(self.name)])+"/"+str(Global.scr[int(self.name)+5++int(Global.sup)])
 	pass

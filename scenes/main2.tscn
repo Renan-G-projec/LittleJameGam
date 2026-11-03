@@ -1,0 +1,315 @@
+[gd_scene format=3 uid="uid://dkcrxeubky73g"]
+
+[ext_resource type="Script" uid="uid://bfn4o32h0lh8a" path="res://scripts/main.gd" id="1_how18"]
+[ext_resource type="Texture2D" uid="uid://d3rqi8i24jroe" path="res://sprites/main/background.png" id="2_7oi8n"]
+[ext_resource type="Texture2D" uid="uid://dt8djhpnpwx4e" path="res://sprites/main/backgroundsc.png" id="3_gs8qe"]
+[ext_resource type="PackedScene" uid="uid://cxhpwp060almc" path="res://scenes/arcade_button.tscn" id="4_pr66g"]
+[ext_resource type="Texture2D" uid="uid://bcmjycwx5h84b" path="res://sprites/main/directional_buttons.png" id="5_2jfmm"]
+[ext_resource type="Texture2D" uid="uid://cjfty6n0uq7js" path="res://sprites/main/main_button.png" id="6_7obif"]
+[ext_resource type="PackedScene" uid="uid://b33drau0ew2fo" path="res://scenes/player.tscn" id="7_1reov"]
+[ext_resource type="PackedScene" uid="uid://cxjyro4t7mj5n" path="res://scenes/screen.tscn" id="8_1dis4"]
+[ext_resource type="PackedScene" uid="uid://deqmmneen2hcc" path="res://scenes/tutorial.tscn" id="9_c77lx"]
+[ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="10_b77ej"]
+[ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="11_ljnj7"]
+[ext_resource type="PackedScene" uid="uid://niqgf16ydmbc" path="res://scenes/snake.tscn" id="12_0wgk2"]
+[ext_resource type="PackedScene" uid="uid://bjcaqs3uk0abp" path="res://scenes/breakout.tscn" id="13_sws6j"]
+[ext_resource type="PackedScene" uid="uid://belhc3m2ypwpe" path="res://quiz.tscn" id="14_jhcjm"]
+[ext_resource type="PackedScene" uid="uid://dainslf2dtwxq" path="res://scenes/credits.tscn" id="15_28w4p"]
+[ext_resource type="AudioStream" uid="uid://bcumv01c5h8vw" path="res://sfx/background.mp3" id="16_63uc6"]
+[ext_resource type="Theme" uid="uid://l6op4bwjbla" path="res://general/game_theme.tres" id="17_bfdpt"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tipki"]
+action = &"directional_left"
+
+[sub_resource type="InputEventAction" id="InputEventAction_tefeu"]
+action = &"directional_down"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("5_2jfmm")
+region = Rect2(0, 40, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("5_2jfmm")
+region = Rect2(18, 40, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_o6xl0"]
+action = &"directional_up"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("5_2jfmm")
+region = Rect2(0, 20, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
+atlas = ExtResource("5_2jfmm")
+region = Rect2(18, 20, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya4ey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_choun")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tbgi4"]
+action = &"directional_right"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("5_2jfmm")
+region = Rect2(0, 60, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("5_2jfmm")
+region = Rect2(18, 60, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85g3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_wgp3x"]
+action = &"main_action"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = ExtResource("6_7obif")
+region = Rect2(0, 0, 37, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = ExtResource("6_7obif")
+region = Rect2(37, 0, 37, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trceg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb6dy")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8y0u"]
+size = Vector2(30, 10.5)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1p6d"]
+distance = -154.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1p6d"]
+size = Vector2(34.5, 180)
+
+[node name="Main" type="CanvasLayer" unique_id=692422005]
+script = ExtResource("1_how18")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=264363825]
+unique_name_in_owner = true
+texture = ExtResource("2_7oi8n")
+centered = false
+
+[node name="Background2" type="Sprite2D" parent="." unique_id=537479377]
+unique_name_in_owner = true
+z_index = -4
+position = Vector2(82, 24)
+texture = ExtResource("3_gs8qe")
+centered = false
+
+[node name="Background3" type="Sprite2D" parent="." unique_id=1678867441]
+unique_name_in_owner = true
+modulate = Color(0.27, 0.27, 0.27, 0.3254902)
+z_index = 2
+position = Vector2(82, 24)
+texture = ExtResource("3_gs8qe")
+centered = false
+
+[node name="ArcadeButtonLeft" parent="." unique_id=34883181 instance=ExtResource("4_pr66g")]
+position = Vector2(71, 151)
+directional_action = SubResource("InputEventAction_tipki")
+
+[node name="ArcadeButtonDown" parent="." unique_id=1354454935 instance=ExtResource("4_pr66g")]
+position = Vector2(95, 151)
+directional_action = SubResource("InputEventAction_tefeu")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonDown" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_o6xl0")
+
+[node name="ArcadeButtonUp" parent="." unique_id=1469390153 instance=ExtResource("4_pr66g")]
+position = Vector2(118, 151)
+directional_action = SubResource("InputEventAction_o6xl0")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonUp" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_ya4ey")
+
+[node name="ArcadeButtonRight" parent="." unique_id=1237762229 instance=ExtResource("4_pr66g")]
+position = Vector2(143, 151)
+directional_action = SubResource("InputEventAction_tbgi4")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonRight" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_85g3d")
+
+[node name="ArcadeButtonAction" parent="." unique_id=493317942 instance=ExtResource("4_pr66g")]
+position = Vector2(229, 151)
+directional_action = SubResource("InputEventAction_wgp3x")
+
+[node name="AnimatedSprite2D" parent="ArcadeButtonAction" index="0" unique_id=1693972737]
+sprite_frames = SubResource("SpriteFrames_trceg")
+
+[node name="CollisionShape2D" parent="ArcadeButtonAction/Area2D" parent_id_path=PackedInt32Array(493317942, 2072963921) index="0" unique_id=1768119659]
+shape = SubResource("RectangleShape2D_a8y0u")
+
+[node name="MapCollisions" type="StaticBody2D" parent="." unique_id=2028716468]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCollisions" unique_id=879869806]
+position = Vector2(164, 2)
+shape = SubResource("WorldBoundaryShape2D_d1p6d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapCollisions" unique_id=909664667]
+position = Vector2(16.5, 90)
+shape = SubResource("RectangleShape2D_d1p6d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapCollisions" unique_id=1575133643]
+position = Vector2(301.75, 90)
+shape = SubResource("RectangleShape2D_d1p6d")
+
+[node name="Player" parent="." unique_id=915638823 instance=ExtResource("7_1reov")]
+z_index = 26
+position = Vector2(179, 144)
+
+[node name="Screen" parent="." unique_id=187329371 instance=ExtResource("8_1dis4")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" parent="Screen" index="0" unique_id=1825244430]
+propagate_maximum_size = false
+clip_contents = false
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="Screen" parent="Screen/MarginContainer" index="0" unique_id=726290361]
+z_index = -1
+clip_contents = false
+
+[node name="Tutorial" parent="Screen/MarginContainer/Screen" index="0" unique_id=1525755763 instance=ExtResource("9_c77lx")]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1.0
+offset_bottom = 0.0
+
+[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=739241883 instance=ExtResource("10_b77ej")]
+visible = false
+layout_mode = 0
+offset_left = -4.0
+offset_right = 36.0
+
+[node name="Konkey Dong" parent="Screen/MarginContainer/Screen" index="2" unique_id=1365692014 instance=ExtResource("11_ljnj7")]
+visible = false
+layout_mode = 0
+
+[node name="Snake" parent="Screen/MarginContainer/Screen" index="3" unique_id=190291147 instance=ExtResource("12_0wgk2")]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_right = 42.0
+
+[node name="Breakout" parent="Screen/MarginContainer/Screen" index="4" unique_id=550716869 instance=ExtResource("13_sws6j")]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
+
+[node name="Quiz" parent="Screen/MarginContainer/Screen" index="5" unique_id=606861725 instance=ExtResource("14_jhcjm")]
+visible = false
+layout_mode = 1
+offset_left = -5.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 1.0
+
+[node name="Credits" parent="Screen/MarginContainer/Screen" index="6" unique_id=1044668235 instance=ExtResource("15_28w4p")]
+visible = false
+layout_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=938379663]
+stream = ExtResource("16_63uc6")
+volume_db = -18.04
+pitch_scale = 0.75
+autoplay = true
+
+[node name="GameOver" type="ColorRect" parent="." unique_id=1290629229]
+visible = false
+z_index = -1
+offset_left = 80.0
+offset_top = 19.0
+offset_right = 243.0
+offset_bottom = 106.0
+color = Color(0.21176471, 0, 0, 0.84705883)
+
+[node name="tex" type="RichTextLabel" parent="GameOver" unique_id=1702980949]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 9.0
+offset_right = 677.0
+offset_bottom = 289.80002
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("17_bfdpt")
+theme_override_constants/line_separation = -9
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 128
+bbcode_enabled = true
+text = "[wave amp=8.0 freq=2.0 connected=0][b]Game Over[/b]
+Press the action button to proceed"
+tab_size = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="completed" from="." to="." method="_on_completed"]
+
+[editable path="ArcadeButtonLeft"]
+[editable path="ArcadeButtonDown"]
+[editable path="ArcadeButtonUp"]
+[editable path="ArcadeButtonRight"]
+[editable path="ArcadeButtonAction"]
+[editable path="Screen"]

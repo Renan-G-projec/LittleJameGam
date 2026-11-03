@@ -7,14 +7,14 @@ var head := Vector2i(3,4)
 var fruit := Vector2i(12,4)
 var snek := [Vector2i(3,4)]
 var t := 0.0
-var p := 0.8
+var p := 0.6
 var Next := Vector2i.RIGHT
 
 func _ready():
-	Global.scr[7] = 15
+	Global.scr[7+int(Global.sup)] = 15
 	if Global.hard:
-		p = 0.6
-		Global.scr[7] = 30
+		p = 0.4
+		Global.scr[7+int(Global.sup)] = 30
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("directional_down"):
@@ -43,8 +43,14 @@ func _process(delta: float) -> void:
 		else:
 			head += Next
 			fruit = Vector2i(randi_range(0,16),randi_range(0,8))
+			if abs(fruit.x - head.x) > 8: fruit.x -=7*sign(fruit.x - head.x)
+			if abs(fruit.x - head.x) > 5: fruit.x -=4*sign(fruit.x - head.x)
+			if abs(fruit.y - head.y) > 3: fruit.y -=2*sign(fruit.y - head.y)
 			while fruit in snek:
 				fruit = Vector2i(randi_range(0,16),randi_range(0,8))
+				if abs(fruit.x - head.x) > 8: fruit.x -=7*sign(fruit.x - head.x)
+				if abs(fruit.x - head.x) > 5: fruit.x -=4*sign(fruit.x - head.x)
+				if abs(fruit.y - head.y) > 3: fruit.y -=2*sign(fruit.y - head.y)
 			snek.append(head)
 
 	if Global.hard:

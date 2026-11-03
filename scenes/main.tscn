@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://deqmmneen2hcc" path="res://scenes/tutorial.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://nnfcvaj400r1" path="res://scenes/pong.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dyfc2boo0d7mi" path="res://scenes/konkey dong/konkey_dong.tscn" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://cce308lm4o7gu" path="res://scenes/game.tscn" id="10_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://bjcaqs3uk0abp" path="res://scenes/breakout.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://niqgf16ydmbc" path="res://scenes/snake.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://belhc3m2ypwpe" path="res://quiz.tscn" id="11_ya4ey"]
@@ -238,7 +239,7 @@ offset_left = 1.0
 offset_right = 1.0
 offset_bottom = 0.0
 
-[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=739241883 instance=ExtResource("9_85g3d")]
+[node name="PONG" parent="Screen/MarginContainer/Screen" index="1" unique_id=1031138968 instance=ExtResource("9_85g3d")]
 visible = false
 layout_mode = 0
 offset_left = -4.0
@@ -268,7 +269,13 @@ offset_top = 1.0
 offset_right = -5.0
 offset_bottom = 1.0
 
-[node name="Credits" parent="Screen/MarginContainer/Screen" index="6" unique_id=1044668235 instance=ExtResource("14_jbj1t")]
+[node name="Game" parent="Screen/MarginContainer/Screen" index="6" unique_id=739241883 instance=ExtResource("10_dp3eg")]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
+
+[node name="Credits" parent="Screen/MarginContainer/Screen" index="7" unique_id=1044668235 instance=ExtResource("14_jbj1t")]
 visible = false
 layout_mode = 0
 

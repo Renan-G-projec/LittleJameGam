@@ -36,12 +36,13 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if position.y < 21.0:
-		Global.scr[1] = 2
-	elif position.y < 39.0:
-		Global.scr[1] = 1
-	else:
-		Global.scr[1] = 0
+	if not is_dying:
+		if position.y < 21.0:
+			Global.scr[1] = 2
+		elif position.y < 39.0:
+			Global.scr[1] = 1
+		else:
+			Global.scr[1] = 0
 
 
 func _physics_process(delta: float) -> void:

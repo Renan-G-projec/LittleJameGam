@@ -23,10 +23,10 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	Global.scr[3] = 5
-	Global.scr[8] = 5
+	Global.scr[8+int(Global.sup)] = 5
 	if Global.hard:
 		Global.scr[3] = 15
-		Global.scr[8] = 15
+		Global.scr[8+int(Global.sup)] = 15
 	if has_won or has_lose:
 		return
 	print(blocks_left)

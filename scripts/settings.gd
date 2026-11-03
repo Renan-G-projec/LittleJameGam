@@ -1,10 +1,13 @@
 
 # Ad Maiorem Dei Gloriam!
 extends Control
-
+var sha := false
+var l:=0.0
 var _labels: Array[RichTextLabel] = []
 var _labels_original_text: Array[Array] = [["fullscreen: off","v","Hard mode: off","English","exit"],["tela cheia: x","v","Modo dificil: X","Portugues","Sair"]]
-
+var p := 2
+var k:=0
+var t:=0.0
 var is_fullscreen := false
 var _is_adjusting_volume := false
 
@@ -32,10 +35,25 @@ var _current_selected_label: int = 0:
 		_activate_current_label()
 
 func _hardness():
-	Global.hard = !Global.hard
+	k+=1
+	if p ==3:
+		if Global.sup:
+			Global.hard = false
+			Global.sup = false
+		else:
+			if Global.hard:
+				Global.sup = true
+			else:
+				Global.hard = true
+	else:
+		Global.hard = !Global.hard
 	if Global.hard:
-		_labels_original_text[0][2] = "Hard MODE: On"
-		_labels_original_text[1][2] ="Modo dificil: O"
+		if Global.sup:
+			_labels_original_text[0][2] = "Hard MODE: On!!!"
+			_labels_original_text[1][2] ="Modo dificil: O!!!"
+		else:
+			_labels_original_text[0][2] = "Hard MODE: On"
+			_labels_original_text[1][2] ="Modo dificil: O"
 	else:
 		_labels_original_text[0][2] = "Hard MODE: Off"
 		_labels_original_text[1][2] ="Modo dificil: X"
@@ -77,7 +95,22 @@ func _activate_current_label() -> void:
 	_is_adjusting_volume = (_current_selected_label == VOLUME_INDEX)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if p == 2:
+		if k > 0:
+			t += delta
+			if t> 0.5:
+				t-=0.5
+				k-=1
+			if k > 30:
+				p = 3
+				sha = true
+	if sha:
+		l+= delta
+		self.offset_transform_position = Vector2(randi_range(-3,3),randi_range(-3,3))
+		if l > 0.2:
+			self.offset_transform_position = Vector2.ZERO
+			sha = false
 	var navigation := (
 		int(Input.is_action_just_pressed("ui_down"))
 		- int(Input.is_action_just_pressed("ui_up"))

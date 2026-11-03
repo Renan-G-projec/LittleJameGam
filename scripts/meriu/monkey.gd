@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	Global.scr[6] = 3
+	Global.scr[6+int(Global.sup)] = 3
 	pass
 
 
