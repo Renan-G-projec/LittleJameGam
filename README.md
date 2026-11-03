@@ -1,5 +1,5 @@
 # AntCade
-
+<p align="center"> href="[https://github.com/Developer-Vini](https://renan-g.itch.io/antcade)"><strong>PLAY!</strong></a> </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/65497dca-944c-4d3b-a606-5b8280cc111c" alt="game banner" width="100%">
 </p>
@@ -76,3 +76,4 @@ Your dream is to become the greatest gamer in the world, but your friends and fa
   &nbsp; • &nbsp;
   <a href="https://github.com/hyuuwu"><strong>Luiz</strong></a>
 </p>
+
